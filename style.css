@@ -1,0 +1,62 @@
+/*
+Theme Name: Kidsmont
+Description: Theme Wordpress for Kidsmont
+*/
+
+
+#wcpay-payment-request-wrapper, #paypal-button-container{
+	    -webkit-box-flex: 0;
+    -ms-flex: 0 1 calc(50% - 2rem);
+    flex: 0 1 calc(50% - 2rem);
+    padding-top: 0 !important;
+}
+#wcpay-payment-request-button-separator{
+	display: none !important;
+}
+.faq__head{
+	position: relative;
+}
+.paypal-buttons{
+	height: 37px !important;
+}
+.steps-checkout__list ul {
+    padding-left: 0;
+}
+
+.search-result{
+	position: absolute;
+	width: 100%;
+	padding: 5px 0;
+}
+.search-link{
+	display: block;
+}
+.un-wish{
+    color: #fff;
+    background-color: #0F8F5A;
+    border-color: #0F8F5A !important;
+}
+.a2a_kit .a2a_svg {
+    display: none !important;
+}
+.qbutton{
+	display: none !important;
+}
+
+.wc_payment_method .checkbox-radio{
+	flex-wrap: wrap;
+}
+.wc_payment_method .checkbox-radio .payment_box{
+	width: 100%;
+}
+.footer-simple__body p a {
+    font-weight: 700;
+    font-family: "GeneralSans", sans-serif;
+}
+@media (min-width: 992px){
+	.menu-item-has-children:hover .menu__sub-menu-wrap {
+	    display: -webkit-box;
+	    display: -ms-flexbox;
+	    display: flex;
+	}
+}

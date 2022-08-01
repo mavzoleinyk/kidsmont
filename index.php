@@ -109,7 +109,7 @@ $cats = get_terms('category', ['hide_empty'=>false, 'exclude' => 1]);
 	    <div class="carousel  carousel-preview-posts padding-wrap" data-carousel="posts">
 	    	<div class="container-sm">
 	        	<div class="carousel__head head d-flex align-items-center justify-content-between">
-	            	<h3 class="head__title mb-0">Popular</h3>
+	            	<h3 class="head__title mb-0">UNSERE BESTSELLER</h3>
 	            	<div class="slider-buttons">
 	    				<div class="slider-button slider-button--prev hover" data-action="btn-prev">
 	        				<img class="img-svg" src="<?= get_template_directory_uri();?>/img/icons/arrow-left.svg" alt="">

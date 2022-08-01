@@ -170,7 +170,8 @@
                             $link_title = $link['title'];
                             $link_target = $link['target'] ? $link['target'] : '_self';
                             ?>
-                            <a class="footer__title-link" href="<?= esc_url($link_url); ?>" target="<?= esc_attr($link_target); ?>"><div class="footer__title-link-plus"></div><?= esc_html($link_title); ?></a>
+                            <!-- <a class="footer__title-link" href="<?= esc_url($link_url); ?>" target="<?= esc_attr($link_target); ?>"><div class="footer__title-link-plus"></div><?= esc_html($link_title); ?></a> -->
+                            <div class="footer__title-link"><div class="footer__title-link-plus"></div><?= esc_html($link_title); ?></div>
                         <?php endif;
 
                         wp_nav_menu([
@@ -188,7 +189,7 @@
                             $link_title = $link['title'];
                             $link_target = $link['target'] ? $link['target'] : '_self';
                             ?>
-                            <a class="footer__title-link" href="<?= esc_url($link_url); ?>" target="<?= esc_attr($link_target); ?>"><div class="footer__title-link-plus"></div><?= esc_html($link_title); ?></a>
+                            <div class="footer__title-link"><div class="footer__title-link-plus"></div><?= esc_html($link_title); ?></div>
                         <?php endif; 
 
                         wp_nav_menu([
@@ -229,7 +230,7 @@
                             $link_title = $link['title'];
                             $link_target = $link['target'] ? $link['target'] : '_self';
                             ?>
-                            <a class="footer__title-link" href="<?= esc_url($link_url); ?>" target="<?= esc_attr($link_target); ?>"><div class="footer__title-link-plus"></div><?= esc_html($link_title); ?></a>
+                            <div class="footer__title-link"><div class="footer__title-link-plus"></div><?= esc_html($link_title); ?></div>
                         <?php endif; ?>
                         <?php the_field('text_menu_column_5', 'options');?>
                     </div>

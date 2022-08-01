@@ -231,7 +231,7 @@ $("#addreview_m").validate({
 
 
     $(document).on('show_variation', '.single_variation_wrap', function (event, variation) {
-    
+    console.log(variation);
         $('.add-to-cart').attr('data-variation_id', variation.variation_id);
 
         if(variation.price_html){
@@ -242,7 +242,7 @@ $("#addreview_m").validate({
 
     });
 
-    $(document).on('click', '.color-picker__item ', function (e) {
+    $(document).on('click', '.color-picker__item ', function () {
 
     	$('.color-picker__item').removeClass('color-picker__item--active');
     	$(this).addClass('color-picker__item--active');
@@ -251,9 +251,9 @@ $("#addreview_m").validate({
         var material = $(this).closest('.product-detail-main-info__table').find('.option-material.options-list__btn--active').attr('data-material');
 
         var color = $(this).attr('data-color');
-        $('.pa_color').val(color).change();
-        $('.pa_size').val(size).change();
-        $('.pa_material').val(material).change();
+        $('#pa_color').val(color).change();
+        $('#pa_size').val(size).change();
+        $('#pa_material').val(material).change();
 
     })
 
@@ -266,9 +266,9 @@ $("#addreview_m").validate({
         var material = $(this).closest('.product-detail-main-info__table').find('.option-material.options-list__btn--active').attr('data-material');
 
         var size = $(this).attr('data-size');
-        $('.pa_color').val(color).change();
-        $('.pa_size').val(size).change();
-        $('.pa_material').val(material).change();
+        $('#pa_color').val(color).change();
+        $('#pa_size').val(size).change();
+        $('#pa_material').val(material).change();
 
     });
 
@@ -282,9 +282,9 @@ $("#addreview_m").validate({
         var size = $(this).closest('.product-detail-main-info__table').find('.option-size.options-list__btn--active').attr('data-size');
 
         var material = $(this).attr('data-material');
-        $('.pa_color').val(color).change();
-        $('.pa_size').val(size).change();
-        $('.pa_material').val(material).change();
+        $('#pa_color').val(color).change();
+        $('#pa_size').val(size).change();
+        $('#pa_material').val(material).change();
 
     });
 

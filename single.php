@@ -92,50 +92,54 @@ $name = $cat[0]->name;
                                     
                                     $i=1;
 
-                                    while ( have_rows('category_gallery') ) : the_row();?>
+                                    while ( have_rows('category_gallery') ) : the_row();
 
-                                        <div class="article-slider" data-article-slider>
-                                            <div class="article-slider__head">
-                                                <h4 class="article-slider__title text-uppercase"><?= $i;?>. <?php the_sub_field('title');?></h4>
-                                                <div class="slider-buttons">
-                                                    <div class="slider-button slider-button--prev hover" data-action="btn-prev">
-                                                        <img class="img-svg" src="<?= get_template_directory_uri();?>/img/icons/arrow-left.svg" alt="">
-                                                    </div>
-                                                    <div class="slider-button slider-button--next hover" data-action="btn-next">
-                                                        <img class="img-svg" src="<?= get_template_directory_uri();?>/img/icons/arrow-right.svg" alt="">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="article-slider__slider swiper">
-                                                <div class="swiper-wrapper">
+                                        $cats = get_sub_field('category');
 
-                                                    <?php $cats = get_sub_field('category');
+                                        if(!empty($cats)):?>
 
-                                                    foreach ($cats as $cat):
-
-                                                        $kat = get_term_by('id', $cat, 'product_cat');
-
-                                                        $thumbnail_id = get_woocommerce_term_meta( $kat->term_id, 'thumbnail_id', true );
-                                                        $image = wp_get_attachment_url( $thumbnail_id );
-
-                                                        ?>
-                                                    
-                                                        <div class="swiper-slide">
-                                                            <a href="<?= get_term_link($cat);?>" class="article-slider-card not-hover">
-                                                                <div class="article-slider-card__img ibg">
-                                                                    <img src="<?= $image;?>" alt="<?= $kat->name;?>">
-                                                                </div>
-                                                                <div class="article-slider-card__title"><?= $kat->name;?></div>
-                                                            </a>
+                                            <div class="article-slider" data-article-slider>
+                                                <div class="article-slider__head">
+                                                    <h4 class="article-slider__title text-uppercase"><?= $i;?>. <?php the_sub_field('title');?></h4>
+                                                    <div class="slider-buttons">
+                                                        <div class="slider-button slider-button--prev hover" data-action="btn-prev">
+                                                            <img class="img-svg" src="<?= get_template_directory_uri();?>/img/icons/arrow-left.svg" alt="">
                                                         </div>
+                                                        <div class="slider-button slider-button--next hover" data-action="btn-next">
+                                                            <img class="img-svg" src="<?= get_template_directory_uri();?>/img/icons/arrow-right.svg" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="article-slider__slider swiper">
+                                                    <div class="swiper-wrapper">
 
-                                                    <?php endforeach;?>
-                                                    
+                                                        <?php foreach ($cats as $cat):
+
+                                                            $kat = get_term_by('id', $cat, 'product_cat');
+
+                                                            $thumbnail_id = get_woocommerce_term_meta( $kat->term_id, 'thumbnail_id', true );
+                                                            $image = wp_get_attachment_url( $thumbnail_id );
+
+                                                            ?>
+                                                        
+                                                            <div class="swiper-slide">
+                                                                <a href="<?php //get_term_link($cat);?>" class="article-slider-card not-hover">
+                                                                    <div class="article-slider-card__img ibg">
+                                                                        <img src="<?= $image;?>" alt="<?= $kat->name;?>">
+                                                                    </div>
+                                                                    <div class="article-slider-card__title"><?= $kat->name;?></div>
+                                                                </a>
+                                                            </div>
+
+                                                        <?php endforeach;?>
+                                                        
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
 
-                                    <?php $i++;
+                                    <?php endif;
+
+                                    $i++;
 
                                     endwhile;
 

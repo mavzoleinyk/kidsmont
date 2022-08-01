@@ -1,43 +1,19 @@
-<?php
+<?php 
 
-/*
-
-Template Name: FAQ Page
-
-*/
-
-get_header();
-
-$cats = get_terms('category_faq');
+$cats = get_sub_field('list_category');
 
 ?>
 
-    <main class="_page " data-padding-top-header-size data-scroll-section>
-
-        <div class="container-sm d-none d-lg-block">
-            <?php if(function_exists('bcn_display')):?>
-                <ul class="breadcrumbs">
-                     <?php bcn_display();?>   
-                </ul>
-            <?php endif;?>
-        </div>
-
-        <div class="container-sm">
-            <div class="head pt-4 pt-lg-0">
-                <h2 class="head__title"><?php the_title();?></h2>
-            </div>
-        </div>
-
-
-        <div class="faq padding-wrap pt-0">
-            <div class="container-sm" data-tabs="has-outside-navigation">
-                <div class="faq__head">
+<div class="padding-wrap">
+    <div class="faq">
+        <div class="container-sm" data-tabs="has-outside-navigation" data-tabs-sub>
+            <div class="faq__head">
                     <form action="/">
                         <div class="faq__search" data-faq-search data-da="body,767.98,first">
                             <button type="submit" class="faq__search-submit">
                                 <img class="img-svg" src="<?= get_template_directory_uri();?>/img/icons/search.svg" alt="">
                             </button>
-                            <input class="faq__search-input" type="text" placeholder="Suchen" name="q">
+                            <input class="faq__search-input" type="text" placeholder="Enter text to search..." name="q">
                             <div class="main-search__close" data-action="hide-faq-search"><span></span></div>
                         </div>
                     </form>
@@ -57,7 +33,9 @@ $cats = get_terms('category_faq');
                             <div class="tabs__nav-list swiper d-none d-md-block" data-tabs-nav data-mobile="false">
                                 <div class="swiper-wrapper">
                                     <?php $i=0;
-                                    foreach ($cats as $cat):?>
+                                    foreach ($cats as $cat2):
+
+                                        $cat = $cat2['faqs_category'][0];?>
                                         <div class="swiper-slide">
                                             <a href="#" class="not-hover" data-tab-trigger="<?= $cat->term_id;?>" id="tab<?= $cat->term_id;?>"><?= $cat->name;?></a>
                                         </div>
@@ -72,7 +50,8 @@ $cats = get_terms('category_faq');
                     <div class="tabs__col-2">
                         <?php $l=0;
 
-                        foreach ($cats as $cat):?>
+                        foreach ($cats as $cat2):
+                            $cat = $cat2['faqs_category'][0];?>
 
                             <div class="tabs__content" data-tab-content="<?= $cat->term_id;?>">
                                 <ul class="accordion" data-spoller>
@@ -114,9 +93,6 @@ $cats = get_terms('category_faq');
                         endforeach;?>
                     </div>
                 </div>
-            </div>
         </div>
-
-    </main>
-
-<?php get_footer();?>
+    </div>
+</div>

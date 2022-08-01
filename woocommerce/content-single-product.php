@@ -24,7 +24,7 @@ global $product;
  *
  * @hooked woocommerce_output_all_notices - 10
  */
-do_action( 'woocommerce_before_single_product' );
+//do_action( 'woocommerce_before_single_product' );
 
 if ( post_password_required() ) {
 	echo get_the_password_form(); // WPCS: XSS ok.
@@ -50,7 +50,6 @@ if ($product->is_type( 'variable' )) {
     $variations_attr = ($product->get_variation_attributes());
     $variative = 'variative';
 
-    print_r( $variations_attr);
 }
 
 
@@ -534,7 +533,7 @@ if($_COOKIE['wish']){
                                 </tr>
                             </table>
                             <?php if( $product->is_type('variable')){
-                                //woocommerce_template_single_add_to_cart(); 
+                                woocommerce_template_single_add_to_cart(); 
                             }?>
                             <div class="product-detail-main-info__buttons">
                                 <?php if(!empty($_COOKIE['wish'])):?>

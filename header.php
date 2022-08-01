@@ -243,7 +243,7 @@ $name = $current_user->display_name;
 	                                    <div class="menu-mobile__actions-item-icon">
 	                                        <img src="<?= get_template_directory_uri();?>/img/icons/favorites.svg" alt="">
 	                                    </div>
-	                                    <div class="menu-mobile__actions-item-text">Favorites</div>
+	                                    <div class="menu-mobile__actions-item-text">Wunschzettel</div>
 	                                    <?php if($_COOKIE['wish']):?>
 					                    	<div class="menu-mobile__actions-item-count d-none"><?= $count;?></div>
 					                    <?php endif;?>
@@ -289,7 +289,7 @@ $name = $current_user->display_name;
 	<div class="side-panel side-panel--right selected-products favorites" data-side-panel="favorites">	
 	    <div class="side-panel__body">
 	        <div class="side-panel__head">
-	            <h3 class="selected-products__title">Favorites</h3>
+	            <h3 class="selected-products__title">Wunschzettel</h3>
 	            <?php if($count>0):?>
 	            	<div class="selected-products__count"><?= $count==1?$count.' product':$count.' products';?></div>
 	            <?php endif;?>
@@ -332,8 +332,8 @@ $name = $current_user->display_name;
 	        <div class="side-panel__bottom">
 	            <div class="selected-products__bottom">
 	                <div class="selected-products__bottom-row selected-products__bottom-row--2">
-	                    <a href="<?= get_permalink( wc_get_page_id( 'shop' ) );?>" class="btn-default btn-default--transparent not-hover">Continue Shopping</a>
-	                    <a href="#" data-product_id="<?= $_COOKIE['wish']; ?>" class="btn-default not-hover fav-to-cart">Add all to cart</a>
+	                    <a href="<?= get_permalink( wc_get_page_id( 'shop' ) );?>" class="btn-default btn-default--transparent not-hover">Weiter kaufen</a>
+	                    <a href="#" data-product_id="<?= $_COOKIE['wish']; ?>" class="btn-default not-hover fav-to-cart">In den Warenkorb</a>
 	                </div>
 	            </div>
 	        </div>

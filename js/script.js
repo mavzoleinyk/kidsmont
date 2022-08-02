@@ -234,6 +234,8 @@ $("#addreview_m").validate({
     console.log(variation);
         $('.add-to-cart').attr('data-variation_id', variation.variation_id);
 
+        $('#main_img').attr('src', variation.image.url);
+
         if(variation.price_html){
         	$('.product-detail-main-info__price').html(variation.price_html);
         } else{
@@ -251,7 +253,7 @@ $("#addreview_m").validate({
         var material = $(this).closest('.product-detail-main-info__table').find('.option-material.options-list__btn--active').attr('data-material');
 
         var color = $(this).attr('data-color');
-        $('#pa_color').val(color).change();
+        $('#pa_farbe').val(color).change();
         $('#pa_size').val(size).change();
         $('#pa_material').val(material).change();
 
@@ -266,7 +268,7 @@ $("#addreview_m").validate({
         var material = $(this).closest('.product-detail-main-info__table').find('.option-material.options-list__btn--active').attr('data-material');
 
         var size = $(this).attr('data-size');
-        $('#pa_color').val(color).change();
+        $('#pa_farbe').val(color).change();
         $('#pa_size').val(size).change();
         $('#pa_material').val(material).change();
 
@@ -282,7 +284,7 @@ $("#addreview_m").validate({
         var size = $(this).closest('.product-detail-main-info__table').find('.option-size.options-list__btn--active').attr('data-size');
 
         var material = $(this).attr('data-material');
-        $('#pa_color').val(color).change();
+        $('#pa_farbe').val(color).change();
         $('#pa_size').val(size).change();
         $('#pa_material').val(material).change();
 
@@ -312,9 +314,15 @@ $("#addreview_m").validate({
 
         var c1 = $('.header-actions__item--like .header-actions__count').text();
 
+        if(c1){
+            $('.header-actions__item--like .header-actions__count').removeClass('hide');
+        }
+
         var c2 = Number(c1) + 1;
 
-        $('.header-actions__item--like .header-actions__count').text(c2)
+        $('.header-actions__item--like .header-actions__count').text(c2);
+
+        
 
 	    $(this).removeClass('add-wish');
         $('.wishlist').removeClass('add-wish');
@@ -353,6 +361,10 @@ $("#addreview_m").validate({
         
 
         var c1 = $('.header-actions__item--like .header-actions__count').text();
+
+        if(c1<=1){
+            $('.header-actions__item--like .header-actions__count').addClass('hide');
+        }
 
         var c2 = Number(c1) - 1;
 
@@ -413,10 +425,7 @@ $("#addreview_m").validate({
                         success: function(data){
 
                             $('.f-result').html(data);
-
-                            if (data.url) {
-                                location.href = data.url
-                            }
+                            
                         }
                     })
 

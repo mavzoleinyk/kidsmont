@@ -89,7 +89,7 @@ function filter(){
 
   if($_GET['color']){
     $args['tax_query'][] = [
-        'taxonomy' => 'pa_color',
+        'taxonomy' => 'pa_farbe',
         'field' => 'id',
         'terms' => $_GET['color'],
         'operator' => 'IN',

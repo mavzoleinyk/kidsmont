@@ -62,17 +62,17 @@ if ($product->is_type( 'variable' )) {
     <a href="<?php the_permalink();?>" class="product-card__title"><?php the_title();?></a>
     <div class="product-card__bottom">
         <div class="product-card__price"><?php woocommerce_template_single_price() ?></div>
-        <?php if (isset($variations_attr['pa_color'])) { ?>
+        <?php if (isset($variations_attr['pa_farbe'])) { ?>
             <ul class="color-picker">
                 <?php foreach ($variations as  $variation) {
-                    $colors[] = $variation['attributes']['attribute_pa_color'];
+                    $colors[] = $variation['attributes']['attribute_pa_farbe'];
                 }
 
                 $colors = array_unique($colors);
 
                 if ($colors)
                     foreach ($colors as  $variation) {
-                        $color = get_term_by('slug', $variation , 'pa_color');
+                        $color = get_term_by('slug', $variation , 'pa_farbe');
                         $c = get_field('color', 'pa_color_'.$color->term_id);
                         ?>
                         

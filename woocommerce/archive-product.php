@@ -72,7 +72,7 @@ if (get_queried_object()->taxonomy){
 
   if($_GET['color']){
     $args['tax_query'][] = [
-        'taxonomy' => 'pa_color',
+        'taxonomy' => 'pa_farbe',
         'field' => 'id',
         'terms' => $_GET['color'],
         'operator' => 'IN',
@@ -167,7 +167,6 @@ woocommerce_output_all_notices();
             <div class="container-sm">
                 <div class="products__body">
                     <div class="products__filter">
-
                         <div class="side-panel products-filter" data-side-panel="products-filter"
                             data-da="body,991.98,first">
                             <form action="<?= $link;?>" id="filter">
@@ -243,9 +242,9 @@ woocommerce_output_all_notices();
                                                         </div>
                                                     </div>
                                                 </div>
-                                                 <?php $colors = get_terms('pa_color');
+                                                 <?php $colors = get_terms('pa_farbe');
 
-                                                if(isset($colors) && taxonomy_exists('pa_color')):?>
+                                                if(isset($colors) && taxonomy_exists('pa_farbe')):?>
 
                                                     <div class="products-filter__list-item">
                                                         <div class="products-filter__list-item-title active"

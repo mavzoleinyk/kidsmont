@@ -7,26 +7,7 @@ $cats = get_sub_field('list_category');
 <div class="padding-wrap">
     <div class="faq">
         <div class="container-sm" data-tabs="has-outside-navigation" data-tabs-sub>
-            <div class="faq__head">
-                    <form action="/">
-                        <div class="faq__search" data-faq-search data-da="body,767.98,first">
-                            <button type="submit" class="faq__search-submit">
-                                <img class="img-svg" src="<?= get_template_directory_uri();?>/img/icons/search.svg" alt="">
-                            </button>
-                            <input class="faq__search-input" type="text" placeholder="Enter text to search..." name="q">
-                            <div class="main-search__close" data-action="hide-faq-search"><span></span></div>
-                        </div>
-                    </form>
-                    <div class="search-result"></div>
-                    <button class="faq__mob-search-btn" data-action="show-faq-search">
-                        <img src="<?= get_template_directory_uri();?>/img/icons/search.svg" alt="">
-                        Search
-                    </button>
-                    <button class="faq__mob-select" data-side-panel-open="faq-items">
-                        <img src="<?= get_template_directory_uri();?>/img/icons/menu.svg" alt="">
-                        Iteams
-                    </button>
-                </div>
+            
                 <div class="faq__body tabs" >
                     <div class="tabs__col-1">
                         <div class="tabs__nav">

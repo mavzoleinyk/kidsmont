@@ -127,7 +127,7 @@ if($_COOKIE['wish']){
                                         <div class="swiper-slide">
                                             <div class="gallery-product-detail__item">
                                                 <div class="gallery-product-detail__img">
-                                                    <img src="<?php the_post_thumbnail_url();?>" alt="">
+                                                    <img src="<?php the_post_thumbnail_url();?>" alt="" id="main_img">
                                                 </div>
                                             </div>
                                         </div>
@@ -424,7 +424,7 @@ if($_COOKIE['wish']){
                                 </p>
                             </div>
                             <table class="product-detail-main-info__table">
-                                <?php if (isset($variations_attr['pa_color'])) { ?>
+                                <?php if (isset($variations_attr['pa_farbe'])) { ?>
                                     <tr>
                                         <td>
                                             <div class="product-detail-main-info__table-label">
@@ -436,18 +436,18 @@ if($_COOKIE['wish']){
                                                 <ul class="color-picker">
 
                                                     <?php foreach ($variations as  $variation) {
-                                                        $colors[] = $variation['attributes']['attribute_pa_color'];
+                                                        $colors[] = $variation['attributes']['attribute_pa_farbe'];
                                                     }
 
                                                     $colors = array_unique($colors);
 
                                                     if ($colors){
                                                         foreach ($colors as  $variation) {
-                                                            $color = get_term_by('slug', $variation , 'pa_color');
+                                                            $color = get_term_by('slug', $variation , 'pa_farbe');
 
-                                                            $c = get_field('color', 'pa_color_'.$color->term_id);?>
+                                                            $c = get_field('color', 'pa_farbe_'.$color->term_id);?>
                                                             <li>
-                                                                <a data-color="<?= $color->slug ?>" class="color-picker__item <?= $default_attributes['pa_color'] == $color->slug ? 'color-picker__item--active' : '' ?>"
+                                                                <a data-color="<?= $color->slug ?>" class="color-picker__item <?= $default_attributes['pa_farbe'] == $color->slug ? 'color-picker__item--active' : '' ?>"
                                                                     style="background-color: <?= $c;?>" href="#"></a>
                                                             </li>
 

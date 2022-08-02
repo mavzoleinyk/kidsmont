@@ -53,6 +53,13 @@ Description: Theme Wordpress for Kidsmont
     font-weight: 700;
     font-family: "GeneralSans", sans-serif;
 }
+.hide{
+	opacity: 0;
+}
+.f-result{
+	color: #f00;
+    margin: -20px 0 20px;
+}
 @media (min-width: 992px){
 	.menu-item-has-children:hover .menu__sub-menu-wrap {
 	    display: -webkit-box;

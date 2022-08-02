@@ -467,9 +467,10 @@ function registration_validation(  )  {
 
     $reg_errors = new WP_Error;
 
-    $email      =   sanitize_email($_POST['email']);
-    $password   =   esc_attr($_POST['password']);
-
+    $email      =  sanitize_email($_POST['email']);
+    $password   =  esc_attr($_POST['password']);
+    $first_name =  sanitize_text_field($_POST['first_name']);
+    $last_name  =  sanitize_text_field($_POST['last_name']);
 
 
     if ( empty( $password ) || empty( $email ) ) {
@@ -487,17 +488,15 @@ function registration_validation(  )  {
     }
 
     if (  !empty($reg_errors->errors ) )  {
-        echo '<div class="container">';
         foreach ( $reg_errors->get_error_messages() as $error ) {
             echo '<div><strong>';
             echo $error . '</strong><br/>';
 
             echo '</div>';
         }
-        echo '</div>';
     } else {
 
-        complete_registration( $password, $email);
+        complete_registration( $password, $email, $first_name, $last_name);
 
     }
 
@@ -506,19 +505,23 @@ function registration_validation(  )  {
     die();
 }
 
-function complete_registration(  $password, $email) {
+function complete_registration(  $password, $email, $first_name, $last_name) {
 
 
         $userdata = array(
         'user_login'    =>  $email,
         'user_email'    =>  $email,
         'user_pass'     =>  $password,
+        'first_name'    =>   $first_name,
+        'last_name'     =>   $last_name,
         );
         $user_id = wp_insert_user( $userdata );
 
         nocache_headers();
         wp_clear_auth_cookie();
         wp_set_auth_cookie( $user_id );
+
+        echo '<script>  location.href = "'.get_permalink(34).'"; </script>';
 
 }
 
@@ -545,11 +548,11 @@ function my_login_action()  {
   else
 
     wp_send_json([
-        'url' => get_permalink(41),
+        'url' => get_permalink(34),
         'msg' => 'Processing..'
     ]);
 
-    wp_redirect( get_permalink(41));
+    wp_redirect( get_permalink(34));
 
     
   

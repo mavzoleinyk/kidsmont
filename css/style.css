@@ -3765,6 +3765,10 @@ img {
   vertical-align: top;
 }
 
+ins {
+  text-decoration: none !important;
+}
+
 .img-svg {
   height: 1em;
   width: auto;
@@ -9313,8 +9317,8 @@ form.dropzone > .dz-preview {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  width: 9px;
-  height: 6px;
+  width: 12px;
+  height: 8px;
 }
 
 .orders-list {
@@ -11283,8 +11287,8 @@ form.dropzone > .dz-preview {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  width: 9px;
-  height: 6px;
+  width: 12px;
+  height: 8px;
 }
 
 .products__list {
@@ -11842,8 +11846,8 @@ form.dropzone > .dz-preview {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  width: 9px;
-  height: 6px;
+  width: 12px;
+  height: 8px;
 }
 
 .blog__filter-item {
@@ -12240,9 +12244,9 @@ form.dropzone > .dz-preview {
 
 .faq__mob-search-btn {
   position: relative;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 50%;
-          flex: 0 0 50%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -12282,9 +12286,9 @@ form.dropzone > .dz-preview {
 }
 
 .faq__mob-select {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 50%;
-          flex: 0 0 50%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -12325,8 +12329,8 @@ form.dropzone > .dz-preview {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  width: 9px;
-  height: 6px;
+  width: 12px;
+  height: 8px;
 }
 
 .faq__mob-select:active {
@@ -12366,6 +12370,7 @@ form.dropzone > .dz-preview {
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
+  background: transparent;
 }
 
 .faq__search-input {
@@ -13301,13 +13306,13 @@ form.dropzone > .dz-preview {
   margin-bottom: 0;
 }
 
-.block-list > li:not(:first-child) {
-  padding-top: 8.5rem;
-}
-
-.block-list > li:not(:last-child) {
+.block-list > li {
   padding-bottom: 8.5rem;
   border-bottom: 1px solid #D2D2D2;
+}
+
+.block-list > li:not(:first-child) {
+  padding-top: 8.5rem;
 }
 
 .ergonomics--second .ergonomics__inner {
@@ -15536,8 +15541,8 @@ form.dropzone > .dz-preview {
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    width: 9px;
-    height: 6px;
+    width: 12px;
+    height: 8px;
   }
 
   .mob-accordion__title:after {
@@ -17056,6 +17061,10 @@ form.dropzone > .dz-preview {
     margin-top: 2.4rem;
   }
 
+  .main-table__td .btn-default {
+    width: 100%;
+  }
+
   .main-table__td-row:not(:last-child) {
     margin-bottom: 1.8rem;
   }
@@ -18239,12 +18248,12 @@ form.dropzone > .dz-preview {
     display: none;
   }
 
-  .block-list > li:not(:first-child) {
-    padding-top: 40px;
+  .block-list > li {
+    padding-bottom: 40px;
   }
 
-  .block-list > li:not(:last-child) {
-    padding-bottom: 40px;
+  .block-list > li:not(:first-child) {
+    padding-top: 40px;
   }
 
   .bg-box--with-padding {
@@ -18353,6 +18362,12 @@ form.dropzone > .dz-preview {
 
   .list-col-2 > li > * {
     max-width: none;
+  }
+}
+
+@media (max-width: 479.98px) {
+  .contact-banner__video .video__btn {
+    top: 20%;
   }
 }
 

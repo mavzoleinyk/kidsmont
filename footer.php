@@ -321,10 +321,10 @@
                                 <div class="form">
                                     <div class="form__items">
                                         <div class="form__item">
-                                            <input type="text" name="name" class="input" placeholder="Name">
+                                            <input type="text" name="first_name" class="input" placeholder="Name">
                                         </div>
                                         <div class="form__item">
-                                            <input type="text" class="input" name="surname" placeholder="Nachname">
+                                            <input type="text" class="input" name="last_name" placeholder="Nachname">
                                         </div>
                                         <div class="form__item">
                                             <input type="text" name="email" class="input" placeholder="Email">
@@ -345,6 +345,7 @@
                                     </div>
                                     <button class="form__submit w-100 btn-default">Registrieren</button>
                                     <input type="hidden" name="action" value="registration_validation">
+                                    <div class="f-result"></div>
                                     <div class="form__bottom">
                                         <a href="#entry" data-popup="open-popup">Ich bin bereits registriert</a>
                                     </div>

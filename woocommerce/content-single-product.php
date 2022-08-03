@@ -378,7 +378,7 @@ if($_COOKIE['wish']){
                                     <div class="carousel carousel--fixed-width carousel-preview-products"
                                         data-carousel="fixed-width">
                                         <div class="carousel__head head d-flex align-items-center justify-content-between">
-                                            <h3 class="head__title mb-0">Buy together</h3>
+                                            <h3 class="head__title mb-0">Kaufen Sie zusammen</h3>
                                             <div class="slider-buttons">
                                                 <div class="slider-button slider-button--prev hover" data-action="btn-prev">
                                                     <img class="img-svg" src="<?= get_template_directory_uri();?>/img/icons/arrow-left.svg" alt="">
@@ -415,9 +415,9 @@ if($_COOKIE['wish']){
                         <div class="product-detail__main-info product-detail-main-info"
                             data-da=".product-detail__col-1,991.98,2" data-scroll data-scroll-sticky
                             data-scroll-target=".product-detail__col-2">
-                            <h3 class="product-detail-main-info__title" data-da=".product-detail__mob-head,991.98,0">
+                            <h1 class="product-detail-main-info__title" data-da=".product-detail__mob-head,991.98,0">
                                 <?php the_title();?>
-                            </h3>
+                            </h1>
                             <div class="product-detail-main-info__text text-content">
                                 <p>
                                     <?= $product->short_description;?>
@@ -619,7 +619,7 @@ if($_COOKIE['wish']){
                                 <tr class="product-detail-main-info__table-row-price">
                                     <td>
                                         <div class="product-detail-main-info__table-label">
-                                            Price
+                                            Preis
                                         </div>
                                     </td>
                                     <td>
@@ -634,13 +634,14 @@ if($_COOKIE['wish']){
                             }?>
                             <div class="product-detail-main-info__buttons">
                                 <?php if(!empty($_COOKIE['wish'])):?>
-                                    <a href="#" data-wish="<?= $product->get_id();?>" class="btn-default not-hover btn-default--transparent wishlist <?= in_array(get_the_ID(), $wish)?'un-wish':'add-wish';?>"><?= in_array(get_the_ID(), $wish)?'Added to Wishlist':'Add to Wishlist';?></a>
+                                    <a href="#" data-wish="<?= $product->get_id();?>" class="btn-default not-hover btn-default--transparent wishlist <?= in_array(get_the_ID(), $wish)?'un-wish':'add-wish';?>"><?= in_array(get_the_ID(), $wish)?'
+Zur Wunschliste hinzugefügt':'Zur Wunschliste hinzufügen';?></a>
                                 <?php else:?>
-                                    <a href="#" data-wish="<?= $product->get_id();?>" class="btn-default not-hover btn-default--transparent wishlist add-wish">Add to Wishlist</a>
+                                    <a href="#" data-wish="<?= $product->get_id();?>" class="btn-default not-hover btn-default--transparent wishlist add-wish">Auf Wunschzettel</a>
                                 <?php endif;?>
 
                                 <a href="#" data-product_id="<?= $product->get_id(); ?>" class="btn-default not-hover add-to-cart" 
-                                    <?php if( $product->is_type('variable') && $variation_id){ echo 'data-variation_id="'.$variation_id.'"';}?>>Buy now</a>   
+                                    <?php if( $product->is_type('variable') && $variation_id){ echo 'data-variation_id="'.$variation_id.'"';}?>>Kaufe jetzt</a>   
                             </div>
                             <?php if(get_field('delivery_product_text', 'options')):?>
                                 <div class="product-detail-main-info__bottom text-content">

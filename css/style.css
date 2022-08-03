@@ -3901,6 +3901,14 @@ strong {
   margin-bottom: 4rem;
 }
 
+h1.head__title{
+  font-family: "GeneralSans-Semibold", sans-serif;
+  font-weight: 600;
+  font-size: 4.8rem;
+  line-height: 1.5em;
+  text-transform: uppercase;
+}
+
 .link-see-more {
   color: #037847;
   text-decoration: none !important;
@@ -7029,7 +7037,7 @@ label.error,
   bottom: 0;
   width: 100%;
   height: calc(100% - 6.7rem);
-  background-color: #EBE8E4;
+  background-color: #fff;
   -webkit-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
   transition: all 0.3s ease;
@@ -11427,6 +11435,13 @@ form.dropzone > .dz-preview {
   margin-bottom: 1.6rem;
   text-transform: none;
 }
+h1.product-detail-main-info__title{
+  font-family: "GeneralSans-Semibold", sans-serif;
+  font-weight: 600;
+  font-size: 3.6rem;
+  line-height: 1.5em;
+  margin-top: 0;
+}
 
 .product-detail-main-info__text {
   margin-bottom: 2.4rem;
@@ -13789,7 +13804,7 @@ form.dropzone > .dz-preview {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 auto;
             flex: 1 1 auto;
-    padding-bottom: 3.7rem;
+    padding-bottom: 2.7rem;
     margin-bottom: 10px;
   }
 
@@ -14308,7 +14323,7 @@ form.dropzone > .dz-preview {
   }
 
   .product-carousel-card:hover:before {
-    background-color: #cdcac7;
+    background-color: #fff;
   }
 
   .product-carousel-card:hover .product-carousel-card__center-icon {

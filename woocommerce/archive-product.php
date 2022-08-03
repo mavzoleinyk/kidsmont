@@ -43,11 +43,11 @@ if (get_queried_object()->taxonomy){
 
 
 $order = [
-    'menu_order' => 'Standaard',
-    'popularity' => 'Populariteit',
-    'date' => 'Nieuwste',
-    'price-desc' => 'Aflopende prijs',
-    'price' => 'Prijsverhoging',
+    'menu_order' => 'Gewöhnliche',
+    'popularity' => 'Beliebt',
+    'date' => 'Neuheiten',
+    'price-desc' => 'Von teuer bis günstig',
+    'price' => 'Von günstig bis teuer',
 ];
 
 
@@ -185,7 +185,7 @@ woocommerce_output_all_notices();
 
         <div class="container-sm">
             <div class="head pt-4 pt-lg-0">
-                <h2 class="head__title"><?php woocommerce_page_title(); ?></h2>
+                <h1 class="head__title"><?php woocommerce_page_title(); ?></h1>
             </div>
         </div>
 
@@ -202,7 +202,7 @@ woocommerce_output_all_notices();
                                 <div class="side-panel__close" data-side-panel-close><span></span></div>
                                 <div class="side-panel__body">
                                     <div class="side-panel__head">
-                                        <div class="products-filter__title">Filter Products</div>
+                                        <div class="products-filter__title">Produkte filtern</div>
                                     </div>
                                     <div class="side-panel__scroll-wrap">
                                         <div class="products-filter__body">
@@ -259,7 +259,7 @@ woocommerce_output_all_notices();
 
                                                     <div class="products-filter__list-item">
                                                         <div class="products-filter__list-item-title active"
-                                                            data-spoller-trigger>Groesse</div>
+                                                            data-spoller-trigger>Größe</div>
                                                         <div class="products-filter__list-item-body">
 
                                                             <?php foreach ($groesses as $groesse):?>
@@ -282,7 +282,7 @@ woocommerce_output_all_notices();
 
                                                     <div class="products-filter__list-item">
                                                         <div class="products-filter__list-item-title active"
-                                                            data-spoller-trigger>Model</div>
+                                                            data-spoller-trigger>Modell</div>
                                                         <div class="products-filter__list-item-body">
 
                                                             <?php foreach ($models as $model):?>
@@ -305,7 +305,7 @@ woocommerce_output_all_notices();
 
                                                     <div class="products-filter__list-item">
                                                         <div class="products-filter__list-item-title active"
-                                                            data-spoller-trigger>Hoehe</div>
+                                                            data-spoller-trigger>Höhe</div>
                                                         <div class="products-filter__list-item-body">
 
                                                             <?php foreach ($hoehes as $hoehe):?>
@@ -326,7 +326,7 @@ woocommerce_output_all_notices();
 
                                                 <div class="products-filter__list-item">
                                                     <div class="products-filter__list-item-title active"
-                                                        data-spoller-trigger>Price</div>
+                                                        data-spoller-trigger>Preis</div>
                                                     <div class="products-filter__list-item-body">
                                                         <div class="products-filter__item">
                                                             <div class="price-range" data-price-range value="<?= $_GET['price'] ?>" data-min="<?= $min_pr ?>" data-max="<?= $max_pr ?>" data-start="<?= $min_pr ?>" data-end="<?= $max_pr ?>" data-step="1">
@@ -347,7 +347,7 @@ woocommerce_output_all_notices();
 
                                                     <div class="products-filter__list-item">
                                                         <div class="products-filter__list-item-title active"
-                                                            data-spoller-trigger>Colour</div>
+                                                            data-spoller-trigger>Farbe</div>
                                                         <div class="products-filter__list-item-body">
 
                                                             <?php foreach ($colors as $color):?>
@@ -370,10 +370,10 @@ woocommerce_output_all_notices();
                                     <div class="side-panel__bottom">
                                         <div class="products-filter__bottom">
                                             <button type="reset" onclick="location.href='<?= $link;?>'" data-button-reset
-                                                class="products-filter__rest btn-default btn-default--transparent">Clear
+                                                class="products-filter__rest btn-default btn-default--transparent">Klar
                                                 (<span>4</span>)</button>
                                             <button type="submit"
-                                                class="products-filter__submit btn-default">Apply</button>
+                                                class="products-filter__submit btn-default">Sich bewerben</button>
                                         </div>
                                     </div>
                                 </div>
@@ -387,7 +387,7 @@ woocommerce_output_all_notices();
                         	<?php woocommerce_result_count();?>
                             
                             <div class="products__sort">
-                                <label for="sort">Sort:</label>
+                                <label for="sort">Sortieren:</label>
                                 <div class="select-wrap">
                                     <select id="sort" name="sort" class="_select" data-select="price">
                                         <?php foreach ($order as $key => $value):?>
@@ -403,7 +403,7 @@ woocommerce_output_all_notices();
                                 </button>
                                 <button class="products__mobile-btn" data-side-panel-open="products-sort">
                                     <img src="<?= get_template_directory_uri();?>/img/icons/sort.svg" alt="">
-                                    Sort by
+                                    Sortieren nach
                                 </button>
                             </div>
 
@@ -452,7 +452,7 @@ woocommerce_output_all_notices();
             <div class="carousel  carousel-preview-products padding-wrap" data-carousel="">
                 <div class="container-sm">
                     <div class="carousel__head head d-flex align-items-center justify-content-between">
-                        <h3 class="head__title mb-0">Products viewed</h3>
+                        <h3 class="head__title mb-0">Produkte angesehen</h3>
                         <div class="slider-buttons">
                             <div class="slider-button slider-button--prev hover" data-action="btn-prev">
                                 <img class="img-svg" src="<?= get_template_directory_uri();?>/img/icons/arrow-left.svg" alt="">

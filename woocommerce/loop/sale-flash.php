@@ -24,7 +24,8 @@ global $post, $product;
 ?>
 <?php if ( $product->is_on_sale() ) : ?>
 
-	<?php echo apply_filters( 'woocommerce_sale_flash', '<div class="product-card__label-group"><div class="product-card__label card-label">' . esc_html__( 'SALE', 'woocommerce' ) . '</div></div>', $post, $product ); ?>
+	<?php echo apply_filters( 'woocommerce_sale_flash', '<div class="product-card__label-group"><div class="product-card__label card-label">' . esc_html__( '
+VERKAUF', 'woocommerce' ) . '</div></div>', $post, $product ); ?>
 
 	<?php
 endif;

@@ -24,9 +24,9 @@ do_action( 'woocommerce_before_mini_cart' );
 $cs = WC()->cart->get_cart_contents_count();
 
 if($cs==1){
-	$cnum = $cs . ' product';
+	$cnum = $cs . ' produkt';
 }else{
-	$cnum = $cs . ' products';
+	$cnum = $cs . ' produkte';
 }?>
 
 	<div class="side-panel__body">
@@ -133,8 +133,8 @@ if($cs==1){
 		                    </div>
 		                </div>
 		                <div class="selected-products__bottom-row selected-products__bottom-row--2">
-		                    <a href="<?= esc_url( wc_get_cart_url() ); ?>" class="btn-default btn-default--transparent not-hover">View Cart</a>
-		                    <a href="<?= esc_url( wc_get_checkout_url() ); ?>" class="btn-default not-hover">Checkout</a>
+		                    <a href="<?= esc_url( wc_get_cart_url() ); ?>" class="btn-default btn-default--transparent not-hover">Warenkorb ansehen</a>
+		                    <a href="<?= esc_url( wc_get_checkout_url() ); ?>" class="btn-default not-hover">Zur kasse</a>
 		                </div>
 		            </div>
 		        </div>

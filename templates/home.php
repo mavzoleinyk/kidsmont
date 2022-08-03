@@ -53,7 +53,7 @@ if( $btn ){
 	                    <div class="container">
 	                        <?php if( have_rows('title') ):?>
 
-		            			<h1 class="promo-header__title promo-header__title--layer-2" data-promo-title data-scroll>
+		            			<div class="promo-header__title promo-header__title--layer-2" data-promo-title data-scroll>
 
 		                    		<?php while ( have_rows('title') ) : the_row();?>
 
@@ -61,7 +61,7 @@ if( $btn ){
 
 		                    		<?php endwhile;?>
 
-		                    	</h1>
+								</div>
 
 							<?php endif;?>
 	                    </div>

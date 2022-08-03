@@ -209,7 +209,7 @@
                             $link_title = $link['title'];
                             $link_target = $link['target'] ? $link['target'] : '_self';
                             ?>
-                            <a class="footer__title-link" href="<?= esc_url($link_url); ?>" target="<?= esc_attr($link_target); ?>"><div class="footer__title-link-plus"></div><?= esc_html($link_title); ?></a>
+                            <div class="footer__title-link"><div class="footer__title-link-plus"></div><?= esc_html($link_title); ?></div>
                         <?php endif; 
 
                         wp_nav_menu([
@@ -473,6 +473,17 @@
         </div>
     </footer>
 <?php endif;?>
-  <?php wp_footer(); ?>
+<?php wp_footer(); ?>
+<script>
+        (function(w,d,u){
+                var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/60000|0);
+                var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
+        })(window,document,'https://cdn.bitrix24.de/b17084425/crm/site_button/loader_2_btl2yk.js');
+</script>
+<!-- TrustBox widget - Micro Review Count -->
+<div class="trustpilot-widget" data-locale="de-DE" data-template-id="5419b6a8b0d04a076446a9ad" data-businessunit-id="628c845d6cba59417276812a" data-style-height="24px" data-style-width="100%" data-theme="light" data-min-review-count="10">
+<a href="https://de.trustpilot.com/review/kidsmont.de" target="_blank" rel="noopener">Trustpilot</a>
+</div>
+<!-- End TrustBox widget -->
 	</body>
 </html>

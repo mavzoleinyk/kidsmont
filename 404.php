@@ -17,10 +17,10 @@
                                 <button type="submit" class="faq__search-submit">
                                     <img class="img-svg" src="<?= get_template_directory_uri();?>/img/icons/search.svg" alt="">
                                 </button>
-                                <input class="faq__search-input" type="text" placeholder="Enter text to search...">
+                                <input class="faq__search-input" type="text" placeholder="Geben Sie den zu suchenden Text ein...">
                             </div>
                         </form>
-                        <a href="#" class="message__search-mob-btn btn-default" data-action="show-main-search">Search products</a>
+                        <a href="#" class="message__search-mob-btn btn-default" data-action="show-main-search">Produktsuche</a>
                     </div>
                 </div>
             </div>

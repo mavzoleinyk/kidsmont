@@ -25,15 +25,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php
 	// phpcs:disable WordPress.Security
 	if ( 1 === intval( $total ) ) {
-		_e( 'Showing the single product', 'woocommerce' );
+		_e( 'Zeigt das einzelne Produkt', 'woocommerce' );
 	} elseif ( $total <= $per_page || -1 === $per_page ) {
 		/* translators: %d: total results */
-		printf( _n( '%d product', '%d products', $total, 'woocommerce' ), $total );
+		printf( _n( '%d produkt', '%d produkte', $total, 'woocommerce' ), $total );
 	} else {
 		$first = ( $per_page * $current ) - $per_page + 1;
 		$last  = min( $total, $per_page * $current );
 	
-		printf( _nx( '%3$d product', '%3$d products', $total, 'with first and last result', 'woocommerce' ), $first, $last, $total );
+		printf( _nx( '%3$d produkt', '%3$d produkte', $total, 'mit erstem und letztem Ergebnis', 'woocommerce' ), $first, $last, $total );
 	}
 	
 	?>

@@ -60,6 +60,9 @@ Description: Theme Wordpress for Kidsmont
 	color: #f00;
     margin: -20px 0 20px;
 }
+label.error, .wpcf7-not-valid-tip{
+	width: 100%;
+}
 @media (min-width: 992px){
 	.menu-item-has-children:hover .menu__sub-menu-wrap {
 	    display: -webkit-box;

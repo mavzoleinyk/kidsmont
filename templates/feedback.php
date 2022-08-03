@@ -257,13 +257,13 @@ $title2 = get_field('title_1');
 							        0/10
 							    </div>
 							    <div class="drop-zone__body">
-							        <div class="drop-zone__title">Drop your files here</div>
+							        <div class="drop-zone__title">Legen Sie Ihre Dateien hier ab</div>
 							        <span>or</span>
 							        <div class="btn">
 									    <div class="btn__text-decor">
 									        <img class="img-svg" src="<?= get_template_directory_uri();?>/img/photo/upload-photo-text.svg" alt="">
 									    </div>
-									    <div class="btn__text">Upload photos</div>
+									    <div class="btn__text">Fotos hochladen</div>
 									</div>
 							    </div>
 							    <div class="drop-zone__preview dropzone-previews"></div>
@@ -276,10 +276,10 @@ $title2 = get_field('title_1');
                                         <input class="input required" name="name" type="text" placeholder="Name">
                                     </div>
                                     <div class="form__item">
-                                        <textarea data-textarea class="textarea required" placeholder="Comment" name="text"></textarea>
+                                        <textarea data-textarea class="textarea required" placeholder="Kommentar" name="text"></textarea>
                                     </div>
                                 </div>
-                                <button type="submit" class="form__submit btn-default w-100">Leave a comment</button>
+                                <button type="submit" class="form__submit btn-default w-100">Hinterlasse einen Kommentar</button>
                             </div>
                         </div>
                     </div>

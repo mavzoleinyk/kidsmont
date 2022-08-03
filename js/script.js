@@ -413,7 +413,7 @@ $("#addreview_m").validate({
         $('.wishlist').removeClass('add-wish');
 	    $(this).addClass('un-wish');
         $('.wishlist[data-wish="'+id+'"]').addClass('un-wish');
-        $('.wishlist[data-wish="'+id+'"]').text('Added to Wishlist');
+        $('.wishlist[data-wish="'+id+'"]').text('Zur Wunschliste hinzugefügt');
         $('.product-detail__gallery .product-card__like').removeClass('add-wish');
         $('.product-detail__gallery .product-card__like').addClass('un-wish');
 	    $.cookie('wish', nc, { expires: 30, path: '/' });
@@ -440,7 +440,7 @@ $("#addreview_m").validate({
         $('.wishlist').addClass('add-wish');
 	    $(this).removeClass('un-wish');
         $('.wishlist[data-wish="'+id+'"]').removeClass('un-wish');
-        $('.wishlist[data-wish="'+id+'"]').text('Add to Wishlist');
+        $('.wishlist[data-wish="'+id+'"]').text('Auf Wunschzettel');
         $('.product-detail__gallery .product-card__like').removeClass('un-wish');
         $('.product-detail__gallery .product-card__like').addClass('add-wish');
         

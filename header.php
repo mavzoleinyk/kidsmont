@@ -2,14 +2,22 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo('charset');?>">
+	<link rel="apple-touch-icon" sizes="180x180" href="<?php bloginfo('template_directory'); ?>/img/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="<?php bloginfo('template_directory'); ?>/img/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="<?php bloginfo('template_directory'); ?>/img/favicon/favicon-16x16.png">
+	<link rel="manifest" href="<?php bloginfo('template_directory'); ?>/img/favicon/site.webmanifest">
+	<link rel="mask-icon" href="<?php bloginfo('template_directory'); ?>/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<title><?php echo wp_get_document_title(); ?></title>
-		<?php wp_head();?>
 
-
-
+	<?php wp_head();?>
+	<!-- TrustBox script -->
+	<script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+    <!-- End TrustBox script -->
 	<style>
 		/*:root {
 			cursor: none !important;
@@ -181,7 +189,7 @@ $name = $current_user->display_name;
 	            <button class="main-search__submit">
 	                <img class="img-svg" src="<?= get_template_directory_uri();?>/img/icons/search.svg" alt="">
 	            </button>
-	            <input type="text" class="main-search__input" placeholder="Enter text to search..." name="s" id="s">
+	            <input type="text" class="main-search__input" placeholder="Geben Sie den zu suchenden Text ein..." name="s" id="s">
 	            <div class="main-search__close" data-action="hide-main-search"><span></span></div>
 	        </div>
 	    </form>
@@ -291,7 +299,7 @@ $name = $current_user->display_name;
 	        <div class="side-panel__head">
 	            <h3 class="selected-products__title">Wunschzettel</h3>
 	            <?php if($count>0):?>
-	            	<div class="selected-products__count"><?= $count==1?$count.' product':$count.' products';?></div>
+	            	<div class="selected-products__count"><?= $count==1?$count.' produkt':$count.' produkte';?></div>
 	            <?php endif;?>
 	            <div class="side-panel__close side-panel__close--circle" data-side-panel-close><span></span></div> 
 	        </div>
@@ -320,7 +328,7 @@ $name = $current_user->display_name;
 			                            </div>
 			                            <div class="order-card__info-wrap flex-row  flex-md-column justify-content-between align-items-center align-items-md-end justify-content-md-start">
 			                                <div class="order-card__price"><strong><?= $product->get_price();?>€</strong></div>
-			                                <a href="#" data-product_id="<?= $product->get_id(); ?>" class="order-card__add-to-cart add-to-cart">Add to Cart</a>
+			                                <a href="#" data-product_id="<?= $product->get_id(); ?>" class="order-card__add-to-cart add-to-cart">In den Warenkorb</a>
 			                            </div>
 			                        </div>
 			                    </div>
@@ -387,7 +395,6 @@ $name = $current_user->display_name;
 	        <div class="side-panel__head">
 	            <div class="faq-items__title">
 	                Persönliches Büro
-
 	                </div>
 	        </div>
 	        <div class="side-panel__scroll-wrap">

@@ -424,7 +424,7 @@ if($_COOKIE['wish']){
                                 </p>
                             </div>
                             <table class="product-detail-main-info__table">
-                                <?php if (isset($variations_attr['pa_farbe'])) { ?>
+                                <?php if (!empty($variations_attr['pa_farbe'])) { ?>
                                     <tr>
                                         <td>
                                             <div class="product-detail-main-info__table-label">
@@ -461,7 +461,7 @@ if($_COOKIE['wish']){
                                     </tr>
                                 <?php }
 
-                                if ( isset($variations_attr['pa_size'])) {?>
+                                if ( !empty($variations_attr['pa_size'])) {?>
                                     <tr>
                                         <td>
                                             <div class="product-detail-main-info__table-label">
@@ -492,7 +492,7 @@ if($_COOKIE['wish']){
 
                                 <?php }
 
-                                if ( isset($variations_attr['pa_material'])) {?>
+                                if ( !empty($variations_attr['pa_material'])) {?>
                                     <tr>
                                         <td>
                                             <div class="product-detail-main-info__table-label">
@@ -518,7 +518,104 @@ if($_COOKIE['wish']){
                                             </div>
                                         </td>
                                     </tr>
-                                <?php }?>
+                                <?php }
+
+                                if ( !empty($variations_attr['pa_groesse'])) {?>
+                                    <tr>
+                                        <td>
+                                            <div class="product-detail-main-info__table-label">
+                                                Groesse
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="product-detail-main-info__size options-list">
+                                                <?php foreach ($variations as  $variation) {
+                                                    $groesses[] = $variation['attributes']['attribute_pa_groesse'];
+                                                }
+
+                                                $groesses = array_unique($groesses);
+
+                                                if ($groesses){
+                                                    foreach ($groesses as $variation) {
+                                                        $groesse = get_term_by('slug', $variation , 'pa_groesse');?>
+                                                        <a data-groesse="<?= $groesse->slug ?>" class="option-groesse options-list__btn not-hover <?= $default_attributes['pa_groesse'] == $groesse->slug ? 'options-list__btn--active' : '' ?> "
+                                                    href="#"><?= $groesse->name ?></a>
+
+                                                    <?php }
+
+                                                }?>
+
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                <?php }
+
+                                if ( !empty($variations_attr['pa_hoehe'])) {?>
+                                    <tr>
+                                        <td>
+                                            <div class="product-detail-main-info__table-label">
+                                                Hoehe
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="product-detail-main-info__hoehe options-list">
+                                                <?php foreach ($variations as  $variation) {
+                                                    $hoehes[] = $variation['attributes']['attribute_pa_hoehe'];
+                                                }
+
+                                                $hoehes = array_unique($hoehes);
+
+                                                if ($hoehes){
+                                                    foreach ($hoehes as $variation) {
+                                                        $hoehe = get_term_by('slug', $variation , 'pa_hoehe');?>
+                                                        <a data-hoehe="<?= $hoehe->slug ?>" class="option-hoehe options-list__btn not-hover <?= $default_attributes['pa_hoehe'] == $hoehe->slug ? 'options-list__btn--active' : '' ?> "
+                                                    href="#"><?= $hoehe->name ?></a>
+
+                                                    <?php }
+
+                                                }?>
+
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                <?php }
+
+                                if ( !empty($variations_attr['pa_model'])) {?>
+                                    <tr>
+                                        <td>
+                                            <div class="product-detail-main-info__table-label">
+                                                Model
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="product-detail-main-info__model options-list">
+                                                <?php foreach ($variations as  $variation) {
+                                                    $models[] = $variation['attributes']['attribute_pa_model'];
+                                                }
+
+                                                $models = array_unique($models);
+
+                                                if ($models){
+                                                    foreach ($models as $variation) {
+                                                        $model = get_term_by('slug', $variation , 'pa_model');?>
+                                                        <a data-model="<?= $model->slug ?>" class="option-model options-list__btn not-hover <?= $default_attributes['pa_model'] == $model->slug ? 'options-list__btn--active' : '' ?> "
+                                                    href="#"><?= $model->name ?></a>
+
+                                                    <?php }
+
+                                                }?>
+
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                <?php }
+
+
+
+                                ?>
                                 <tr class="product-detail-main-info__table-row-price">
                                     <td>
                                         <div class="product-detail-main-info__table-label">

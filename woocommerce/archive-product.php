@@ -35,11 +35,11 @@ $prices = get_filtered_price();
 $min_pr = $prices['min'];
 $max_pr = $prices['max'];
 
-if (get_queried_object()->taxonomy)
+if (get_queried_object()->taxonomy){
     $link = get_term_link(get_queried_object()->term_id);
-else
+}else{
     $link = get_permalink(get_option( 'woocommerce_shop_page_id' ));
-
+}
 
 
 $order = [
@@ -93,6 +93,33 @@ if (get_queried_object()->taxonomy){
         'taxonomy' => 'pa_material',
         'field' => 'id',
         'terms' => $_GET['material'],
+        'operator' => 'IN',
+    ];
+  }
+
+  if($_GET['groesse']){
+    $args['tax_query'][] = [
+        'taxonomy' => 'pa_groesse',
+        'field' => 'id',
+        'terms' => $_GET['groesse'],
+        'operator' => 'IN',
+    ];
+  }
+
+  if($_GET['hoehe']){
+    $args['tax_query'][] = [
+        'taxonomy' => 'pa_hoehe',
+        'field' => 'id',
+        'terms' => $_GET['hoehe'],
+        'operator' => 'IN',
+    ];
+  }
+
+  if($_GET['model']){
+    $args['tax_query'][] = [
+        'taxonomy' => 'pa_model',
+        'field' => 'id',
+        'terms' => $_GET['model'],
         'operator' => 'IN',
     ];
   }
@@ -182,7 +209,7 @@ woocommerce_output_all_notices();
                                             <div class="products-filter__list" data-spoller>
                                                 <?php $mats = get_terms('pa_material');
 
-                                                if(isset($mats) && taxonomy_exists('pa_material')):?>
+                                                if(!empty($mats) && taxonomy_exists('pa_material')):?>
 
                                                     <div class="products-filter__list-item">
                                                         <div class="products-filter__list-item-title active"
@@ -205,7 +232,7 @@ woocommerce_output_all_notices();
                                                 
                                                 $sizes = get_terms('pa_size');
 
-                                                if(isset($sizes) && taxonomy_exists('pa_size')):?>
+                                                if(!empty($sizes) && taxonomy_exists('pa_size')):?>
 
                                                     <div class="products-filter__list-item">
                                                         <div class="products-filter__list-item-title active"
@@ -224,7 +251,79 @@ woocommerce_output_all_notices();
                                                         </div>
                                                     </div>
 
+                                                <?php endif;
+
+                                                $groesses = get_terms('pa_groesse');
+
+                                                if(!empty($groesses) && taxonomy_exists('pa_groesse')):?>
+
+                                                    <div class="products-filter__list-item">
+                                                        <div class="products-filter__list-item-title active"
+                                                            data-spoller-trigger>Groesse</div>
+                                                        <div class="products-filter__list-item-body">
+
+                                                            <?php foreach ($groesses as $groesse):?>
+                                                                <div class="products-filter__item">
+                                                                    <label class="checkbox-radio">
+                                                                        <input type="checkbox" <?php checked(1, in_array($groesse->term_id, $_GET['groesse'] ?? [])) ?> name="groesse[]" value="<?= $groesse->term_id;?>">
+                                                                        <div class="checkbox-radio__square"></div>
+                                                                        <div class="checkbox-radio__text"><?= $groesse->name;?></div>
+                                                                    </label>
+                                                                </div>
+                                                            <?php endforeach;?>
+                                                        </div>
+                                                    </div>
+
+                                                <?php endif;
+
+                                                $models = get_terms('pa_model');
+
+                                                if(!empty($models) && taxonomy_exists('pa_model')):?>
+
+                                                    <div class="products-filter__list-item">
+                                                        <div class="products-filter__list-item-title active"
+                                                            data-spoller-trigger>Model</div>
+                                                        <div class="products-filter__list-item-body">
+
+                                                            <?php foreach ($models as $model):?>
+                                                                <div class="products-filter__item">
+                                                                    <label class="checkbox-radio">
+                                                                        <input type="checkbox" <?php checked(1, in_array($model->term_id, $_GET['model'] ?? [])) ?> name="model[]" value="<?= $model->term_id;?>">
+                                                                        <div class="checkbox-radio__square"></div>
+                                                                        <div class="checkbox-radio__text"><?= $model->name;?></div>
+                                                                    </label>
+                                                                </div>
+                                                            <?php endforeach;?>
+                                                        </div>
+                                                    </div>
+
+                                                <?php endif;
+
+                                                $hoehes = get_terms('pa_hoehe');
+
+                                                if(!empty($hoehes) && taxonomy_exists('pa_hoehe')):?>
+
+                                                    <div class="products-filter__list-item">
+                                                        <div class="products-filter__list-item-title active"
+                                                            data-spoller-trigger>Hoehe</div>
+                                                        <div class="products-filter__list-item-body">
+
+                                                            <?php foreach ($hoehes as $hoehe):?>
+                                                                <div class="products-filter__item">
+                                                                    <label class="checkbox-radio">
+                                                                        <input type="checkbox" <?php checked(1, in_array($hoehe->term_id, $_GET['hoehe'] ?? [])) ?> name="hoehe[]" value="<?= $hoehe->term_id;?>">
+                                                                        <div class="checkbox-radio__square"></div>
+                                                                        <div class="checkbox-radio__text"><?= $hoehe->name;?></div>
+                                                                    </label>
+                                                                </div>
+                                                            <?php endforeach;?>
+                                                        </div>
+                                                    </div>
+
                                                 <?php endif;?>
+
+
+
                                                 <div class="products-filter__list-item">
                                                     <div class="products-filter__list-item-title active"
                                                         data-spoller-trigger>Price</div>
@@ -244,7 +343,7 @@ woocommerce_output_all_notices();
                                                 </div>
                                                  <?php $colors = get_terms('pa_farbe');
 
-                                                if(isset($colors) && taxonomy_exists('pa_farbe')):?>
+                                                if(!empty($colors) && taxonomy_exists('pa_farbe')):?>
 
                                                     <div class="products-filter__list-item">
                                                         <div class="products-filter__list-item-title active"

@@ -239,7 +239,10 @@ $("#addreview_m").validate({
         if(variation.price_html){
         	$('.product-detail-main-info__price').html(variation.price_html);
         } else{
-        	$('.product-detail-main-info__price').html(variation.display_price+'€');
+            var re = /./gi;
+            var pr = variation.display_price;
+            var newstr = pr.replace(re, ',');
+        	$('.product-detail-main-info__price').html(newstr+'€');
         }
 
     });
@@ -251,11 +254,17 @@ $("#addreview_m").validate({
 
         var size = $(this).closest('.product-detail-main-info__table').find('.option-size.options-list__btn--active').attr('data-size');
         var material = $(this).closest('.product-detail-main-info__table').find('.option-material.options-list__btn--active').attr('data-material');
+        var groesse = $(this).closest('.product-detail-main-info__table').find('.option-groesse.options-list__btn--active').attr('data-groesse');
+        var model = $(this).closest('.product-detail-main-info__table').find('.option-model.options-list__btn--active').attr('data-model');
+        var hoehe = $(this).closest('.product-detail-main-info__table').find('.option-hoehe.options-list__btn--active').attr('data-hoehe');
 
         var color = $(this).attr('data-color');
         $('#pa_farbe').val(color).change();
         $('#pa_size').val(size).change();
         $('#pa_material').val(material).change();
+        $('#pa_hoehe').val(hoehe).change();
+        $('#pa_model').val(model).change();
+        $('#pa_groesse').val(groesse).change();
 
     })
 
@@ -266,11 +275,17 @@ $("#addreview_m").validate({
 
         var color = $(this).closest('.product-detail-main-info__table').find('.color-picker__item.color-picker__item--active').attr('data-color');
         var material = $(this).closest('.product-detail-main-info__table').find('.option-material.options-list__btn--active').attr('data-material');
+        var groesse = $(this).closest('.product-detail-main-info__table').find('.option-groesse.options-list__btn--active').attr('data-groesse');
+        var model = $(this).closest('.product-detail-main-info__table').find('.option-model.options-list__btn--active').attr('data-model');
+        var hoehe = $(this).closest('.product-detail-main-info__table').find('.option-hoehe.options-list__btn--active').attr('data-hoehe');
 
         var size = $(this).attr('data-size');
         $('#pa_farbe').val(color).change();
         $('#pa_size').val(size).change();
         $('#pa_material').val(material).change();
+        $('#pa_hoehe').val(hoehe).change();
+        $('#pa_model').val(model).change();
+        $('#pa_groesse').val(groesse).change();
 
     });
 
@@ -282,11 +297,81 @@ $("#addreview_m").validate({
 
         var color = $(this).closest('.product-detail-main-info__table').find('.color-picker__item.color-picker__item--active').attr('data-color');
         var size = $(this).closest('.product-detail-main-info__table').find('.option-size.options-list__btn--active').attr('data-size');
+        var groesse = $(this).closest('.product-detail-main-info__table').find('.option-groesse.options-list__btn--active').attr('data-groesse');
+        var model = $(this).closest('.product-detail-main-info__table').find('.option-model.options-list__btn--active').attr('data-model');
+        var material = $(this).closest('.product-detail-main-info__table').find('.option-material.options-list__btn--active').attr('data-material');
 
         var material = $(this).attr('data-material');
         $('#pa_farbe').val(color).change();
         $('#pa_size').val(size).change();
         $('#pa_material').val(material).change();
+        $('#pa_hoehe').val(hoehe).change();
+        $('#pa_groesse').val(groesse).change();
+        $('#pa_model').val(model).change();
+
+    });
+
+    $(document).on('click', '.option-groesse', function (e) {
+
+        $('.option-groesse').removeClass('options-list__btn--active');
+        $(this).addClass('options-list__btn--active');
+
+        var color = $(this).closest('.product-detail-main-info__table').find('.color-picker__item.color-picker__item--active').attr('data-color');
+        var material = $(this).closest('.product-detail-main-info__table').find('.option-material.options-list__btn--active').attr('data-material');
+        var hoehe = $(this).closest('.product-detail-main-info__table').find('.option-hoehe.options-list__btn--active').attr('data-hoehe');
+        var model = $(this).closest('.product-detail-main-info__table').find('.option-model.options-list__btn--active').attr('data-model');
+        var size = $(this).closest('.product-detail-main-info__table').find('.option-size.options-list__btn--active').attr('data-size');
+
+        var groesse = $(this).attr('data-groesse');
+        $('#pa_farbe').val(color).change();
+        $('#pa_groesse').val(groesse).change();
+        $('#pa_material').val(material).change();
+        $('#pa_hoehe').val(hoehe).change();
+        $('#pa_model').val(model).change();
+        $('#pa_size').val(size).change();
+
+    });
+
+    $(document).on('click', '.option-hoehe', function (e) {
+
+        $('.option-hoehe').removeClass('options-list__btn--active');
+        $(this).addClass('options-list__btn--active');
+
+        var color = $(this).closest('.product-detail-main-info__table').find('.color-picker__item.color-picker__item--active').attr('data-color');
+        var material = $(this).closest('.product-detail-main-info__table').find('.option-material.options-list__btn--active').attr('data-material');
+        var groesse = $(this).closest('.product-detail-main-info__table').find('.option-groesse.options-list__btn--active').attr('data-groesse');
+        var model = $(this).closest('.product-detail-main-info__table').find('.option-model.options-list__btn--active').attr('data-model');
+        var size = $(this).closest('.product-detail-main-info__table').find('.option-size.options-list__btn--active').attr('data-size');
+
+        var hoehe = $(this).attr('data-hoehe');
+        $('#pa_farbe').val(color).change();
+        $('#pa_hoehe').val(hoehe).change();
+        $('#pa_material').val(material).change();
+        $('#pa_groesse').val(groesse).change();
+        $('#pa_model').val(model).change();
+        $('#pa_size').val(size).change();
+
+
+    });
+
+    $(document).on('click', '.option-model', function (e) {
+
+        $('.option-model').removeClass('options-list__btn--active');
+        $(this).addClass('options-list__btn--active');
+
+        var color = $(this).closest('.product-detail-main-info__table').find('.color-picker__item.color-picker__item--active').attr('data-color');
+        var material = $(this).closest('.product-detail-main-info__table').find('.option-material.options-list__btn--active').attr('data-material');
+        var groesse = $(this).closest('.product-detail-main-info__table').find('.option-groesse.options-list__btn--active').attr('data-groesse');
+        var hoehe = $(this).closest('.product-detail-main-info__table').find('.option-hoehe.options-list__btn--active').attr('data-hoehe');
+        var size = $(this).closest('.product-detail-main-info__table').find('.option-size.options-list__btn--active').attr('data-size');
+
+        var model = $(this).attr('data-model');
+        $('#pa_farbe').val(color).change();
+        $('#pa_model').val(model).change();
+        $('#pa_material').val(material).change();
+        $('#pa_groesse').val(groesse).change();
+        $('#pa_hoehe').val(hoehe).change();
+        $('#pa_size').val(size).change();
 
     });
 
@@ -433,7 +518,9 @@ $("#addreview_m").validate({
             });
 
 
-    function filter(){
+    function filter(e){
+
+        e.preventDefault();
 
         var cont =  '.content';
 

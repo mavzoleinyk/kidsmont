@@ -123,9 +123,11 @@ $name = $cat[0]->name;
                                                             ?>
                                                         
                                                             <div class="swiper-slide">
-                                                                <a href="<?php //get_term_link($cat);?>" class="article-slider-card not-hover">
+                                                                <a href="<?= get_term_link($cat);?>" class="article-slider-card not-hover">
                                                                     <div class="article-slider-card__img ibg">
-                                                                        <img src="<?= $image;?>" alt="<?= $kat->name;?>">
+                                                                        <?php if($image):?>
+                                                                            <img src="<?= $image;?>" alt="<?= $kat->name;?>">
+                                                                        <?php endif;?>
                                                                     </div>
                                                                     <div class="article-slider-card__title"><?= $kat->name;?></div>
                                                                 </a>

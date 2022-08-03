@@ -114,6 +114,33 @@ function filter(){
     ];
   }
 
+  if($_GET['groesse']){
+    $args['tax_query'][] = [
+        'taxonomy' => 'pa_groesse',
+        'field' => 'id',
+        'terms' => $_GET['groesse'],
+        'operator' => 'IN',
+    ];
+  }
+
+  if($_GET['hoehe']){
+    $args['tax_query'][] = [
+        'taxonomy' => 'pa_hoehe',
+        'field' => 'id',
+        'terms' => $_GET['hoehe'],
+        'operator' => 'IN',
+    ];
+  }
+
+  if($_GET['model']){
+    $args['tax_query'][] = [
+        'taxonomy' => 'pa_model',
+        'field' => 'id',
+        'terms' => $_GET['model'],
+        'operator' => 'IN',
+    ];
+  }
+
 
   if ($_GET['price']) {
     $args['meta_query'] = [ 'relation' => 'AND'];

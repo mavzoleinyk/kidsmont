@@ -21,17 +21,17 @@ defined( 'ABSPATH' ) || exit;
 <div class="message padding-wrap pb-0-mob" data-set-full-height>
 	<div class="container-sm">
 		<div class="message__body">
-			<h2 class="message__title text-center">Thank you for your purchase</h2>
+			<h2 class="message__title text-center">Danke für Ihren Einkauf</h2>
 			<div class="message__text text-center">
-				<p>Your order number is <strong>#<?= $order->get_order_number();?></strong></p>
-				<p>We send you order details on <?php if ( is_user_logged_in() && $order->get_user_id() === get_current_user_id() && $order->get_billing_email() ): ?>
+				<p>Deine Bestellnummer lautet <strong>#<?= $order->get_order_number();?></strong></p>
+				<p>Wir senden Ihnen Bestelldetails zu <?php if ( is_user_logged_in() && $order->get_user_id() === get_current_user_id() && $order->get_billing_email() ): ?>
 					<a href="mailto:<?= $order->get_billing_email();?>"><?= $order->get_billing_email();?></a>
 					</li>
 				<?php endif; ?></p>
 			</div>
 			<div class="message__buttons">
 				<a href="<?= get_permalink(wc_get_page_id( 'myaccount' ));?>" class="btn-default not-hover">Auftragsstatus verfolgen</a>
-				<a href="<?= get_permalink(wc_get_page_id( 'shop' ));?>" class="btn-default btn-default--transparent not-hover">Continue Shopping</a>
+				<a href="<?= get_permalink(wc_get_page_id( 'shop' ));?>" class="btn-default btn-default--transparent not-hover">Mit dem Einkaufen fortfahren</a>
 			</div>
 		</div>
 	</div>

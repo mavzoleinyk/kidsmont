@@ -27,9 +27,9 @@ if ( ! is_ajax() ) {
 		<noscript>
 			<?php
 			/* translators: $1 and $2 opening and closing emphasis tags respectively */
-			printf( esc_html__( 'Since your browser does not support JavaScript, or it is disabled, please ensure you click the %1$sUpdate Totals%2$s button before placing your order. You may be charged more than the amount stated above if you fail to do so.', 'woocommerce' ), '<em>', '</em>' );
+			printf( esc_html__( 'Da Ihr Browser JavaScript nicht unterstützt oder deaktiviert ist, stellen Sie bitte sicher, dass Sie auf die Schaltfläche %1$sGesamtsummen aktualisieren%2$s klicken, bevor Sie Ihre Bestellung aufgeben. Wenn Sie dies nicht tun, können Ihnen mehr als der oben angegebene Betrag in Rechnung gestellt werden.', 'woocommerce' ), '<em>', '</em>' );
 			?>
-			<br/><button type="submit" class="button alt" name="woocommerce_checkout_update_totals" value="<?php esc_attr_e( 'Update totals', 'woocommerce' ); ?>"><?php esc_html_e( 'Update totals', 'woocommerce' ); ?></button>
+			<br/><button type="submit" class="button alt" name="woocommerce_checkout_update_totals" value="<?php esc_attr_e( 'Summen aktualisieren', 'woocommerce' ); ?>"><?php esc_html_e( 'Summen aktualisieren', 'woocommerce' ); ?></button>
 		</noscript>
 
 		

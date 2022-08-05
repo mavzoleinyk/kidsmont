@@ -480,5 +480,10 @@
                 var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
         })(window,document,'https://cdn.bitrix24.de/b17084425/crm/site_button/loader_2_btl2yk.js');
 </script>
+<!-- TrustBox widget - Micro Review Count -->
+<div class="trustpilot-widget" data-locale="de-DE" data-template-id="5419b6a8b0d04a076446a9ad" data-businessunit-id="628c845d6cba59417276812a" data-style-height="24px" data-style-width="100%" data-theme="light" data-min-review-count="10">
+<a href="https://de.trustpilot.com/review/kidsmont.de" target="_blank" rel="noopener">Trustpilot</a>
+</div>
+<!-- End TrustBox widget -->
 	</body>
 </html>

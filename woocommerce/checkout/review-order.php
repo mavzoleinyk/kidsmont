@@ -24,11 +24,11 @@ defined( 'ABSPATH' ) || exit;
 
 <ul class="payment-cart__list">
     <li>
-        <p>Subtotal:</p>
+        <p>Zwischensumme:</p>
         <p><strong class="subtot"><?php wc_cart_totals_subtotal_html(); ?></strong></p>
     </li>
     <li>
-        <p>Shipping </p>
+        <p>Versand </p>
         <p><strong class="shipp"> <?= WC()->cart->get_cart_shipping_total() ?></strong></p>
     </li>
 
@@ -47,11 +47,11 @@ defined( 'ABSPATH' ) || exit;
             <input type="checkbox">
             <div class="payment-cart__coupon-checkbox-text">
                 <img src="<?= get_template_directory_uri();?>/img/icons/coupon-icon.svg" alt="">
-                <span>Do you Have a Coupon Code?</span>
+                <span>Haben Sie einen Gutscheincode?</span>
             </div>
         </label>
         <div class="payment-cart__coupon-input">
-            <input type="text" name="coupon_code" class="input" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Your code', 'woocommerce' ); ?>" /><button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>">Apply coupon</button>
+            <input type="text" name="coupon_code" class="input" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Your code', 'woocommerce' ); ?>" /><button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>">Gutschein anwenden</button>
             <?php do_action( 'woocommerce_cart_coupon' ); ?>
         </div>
     </div>
@@ -61,7 +61,7 @@ defined( 'ABSPATH' ) || exit;
 <div class="payment-cart__total">
     <div class="payment-cart__total-col-1">
         <p>Bezahlen</p>
-        <p class="tax_tot">Including VAT <?= wc_cart_totals_taxes_total_html() ?></p>
+        <p class="tax_tot">Inklusive Mehrwertsteuer <?= wc_cart_totals_taxes_total_html() ?></p>
     </div>
     <div class="order-total payment-cart__total-col-2 tot"><?php wc_cart_totals_order_total_html(); ?></div>
 </div>

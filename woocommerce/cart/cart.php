@@ -20,9 +20,9 @@ defined( 'ABSPATH' ) || exit;
 $cs = WC()->cart->get_cart_contents_count();
 
 if($cs==1){
-	$cnum = $cs . ' product';
+	$cnum = $cs . ' produkt';
 }else{
-	$cnum = $cs . ' products';
+	$cnum = $cs . ' produkte';
 }
 
 do_action( 'woocommerce_before_cart' ); ?>
@@ -127,19 +127,19 @@ do_action( 'woocommerce_before_cart' ); ?>
                 	<div class="payment-cart" data-cart>
                 		<div class="payment-cart__main-box">
                 			<div class="payment-cart__mob-head">
-                				<h5 class="payment-cart__mob-head-title" data-text="hide order summary">Show order summary</h5>
+                				<h5 class="payment-cart__mob-head-title" data-text="hide order summary">Bestellübersicht anzeigen</h5>
                 				<div class="payment-cart__mob-head-total-price subtot"><?= $sub. get_woocommerce_currency_symbol(); ?></div>
                 			</div>
                 			<div class="payment-cart__body">
-                				<h4 class="payment-cart__title">Purchase summary</h4>
+                				<h4 class="payment-cart__title">Einkaufszusammenfassung</h4>
                 				<ul class="payment-cart__list">
                 					<li>
-                						<p>Subtotal:</p>
+                						<p>Zwischensumme:</p>
                 						<p><strong class="subtot"><?= $sub. get_woocommerce_currency_symbol(); ?></strong></p>
                 					</li>
                 					<li>
-                						<p>Shipping </p>
-                						<p><strong>Calculated at next step</strong></p>
+                						<p>Versand </p>
+                						<p><strong>Wird im nächsten Schritt berechnet</strong></p>
                 					</li>
                 				</ul>
                 				<?php if ( wc_coupons_enabled() ) { ?>
@@ -148,11 +148,11 @@ do_action( 'woocommerce_before_cart' ); ?>
         	        						<input type="checkbox">
         	        						<div class="payment-cart__coupon-checkbox-text">
         	        							<img src="<?= get_template_directory_uri();?>/img/icons/coupon-icon.svg" alt="">
-        	        							<span>Do you Have a Coupon Code?</span>
+        	        							<span>Haben Sie einen Gutscheincode?</span>
         	        						</div>
         	        					</label>
         	        					<div class="payment-cart__coupon-input">
-        	        						<input type="text" name="coupon_code" class="input not-label" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Your code', 'woocommerce' ); ?>" /><button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>"></button>
+        	        						<input type="text" name="coupon_code" class="input not-label" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Your code', 'woocommerce' ); ?>" /><button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Gutschein anwenden', 'woocommerce' ); ?>"></button>
         								<?php do_action( 'woocommerce_cart_coupon' ); ?>
         	        					</div>
         	        				</div>
@@ -179,7 +179,7 @@ do_action( 'woocommerce_before_cart' ); ?>
                             </div>
                         </div>
                         <div class="payment-cart__bottom">
-                        	<p>We accept:</p>
+                        	<p>Wir akzeptieren:</p>
                             <ul class="payment-cart__accept-list">
                                 <li>
                                     <img src="<?= get_template_directory_uri();?>/img/icons/accept-icon-1.svg" alt="">
@@ -200,7 +200,7 @@ do_action( 'woocommerce_before_cart' ); ?>
                         </div>
                     </div>
                     <div class="shopping-cart__bottom-btn">
-                    	<a href="<?= get_permalink( wc_get_page_id( 'shop' ) );?>" class="btn-default btn-default--transparent not-hover">Continue Shopping</a>
+                    	<a href="<?= get_permalink( wc_get_page_id( 'shop' ) );?>" class="btn-default btn-default--transparent not-hover">Mit dem Einkaufen fortfahren</a>
                     </div>
                 </div>
             </div>

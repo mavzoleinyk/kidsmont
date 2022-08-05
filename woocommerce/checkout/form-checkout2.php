@@ -37,10 +37,10 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 
                 		<div class="shopping-cart__col-1">
 
-                			<h2 class="checkout__title" data-da=".shopping-cart__col-2,991.98,first">checkout</h2>
+                			<h2 class="checkout__title" data-da=".shopping-cart__col-2,991.98,first">Kasse</h2>
 
                 			<div class="checkout__head">
-		                        <h4 class="checkout__head-title">Express checkout</h4>
+		                        <h4 class="checkout__head-title">Express Kasse</h4>
 		                       <div class="checkout__head-buttons">
 		                            <a href="#" class="btn-default g-pay">
 		                                <img src="<?= get_template_directory_uri();?>/img/icons/google-pay.svg" alt="">
@@ -60,30 +60,30 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 		                    	<div class="checkout__steps steps-checkout">
 		                            <div class="steps-checkout__step steps-checkout__step--open" data-step="0">
 		                            	<div class="steps-checkout__head">
-		                            		<h4 class="steps-checkout__title" data-trigger-step><span>1.</span>Contact information</h4>
+		                            		<h4 class="steps-checkout__title" data-trigger-step><span>1.</span>Kontaktinformationen</h4>
 		                            		<div class="steps-checkout__subtitle"> Sie haben bereits ein Konto? <a href="#entry" data-popup="open-popup">Einloggen</a>
 		                            		</div>
 		                            		<ul class="steps-checkout__result-list">
 		                                        <li>Martha Weber, tel. +38(099) 550-55-60, Berlin</li>
 		                                    </ul>
-		                                    <button class="steps-checkout__change">Change</button>
+		                                    <button class="steps-checkout__change">Veränderung</button>
 		                                </div>
 		                                <div class="steps-checkout__collapse" data-collapse-step>
 		                                    <div class="steps-checkout__row">
 		                                            <div class="form">
 		                                                <div class="form__items">
 		                                                    <div class="form__item form__item--half">
-		                                                        <input type="text" class="input" name="billing_first_name" id="billing_first_name" placeholder="Full Name" value="<?= $_POST['billing_first_name']; ?>" autocomplete="given-name">
+		                                                        <input type="text" class="input" name="billing_first_name" id="billing_first_name" placeholder="Vollständiger Name" value="<?= $_POST['billing_first_name']; ?>" autocomplete="given-name">
 		                                                    </div>
 		                                                    <div class="form__item form__item--half"
 		                                                        data-mask="+9(999)-999-99-99">
-		                                                        <input type="text" class="input" name="billing_phone" id="billing_phone" placeholder="Phone" value="<?= $_POST['billing_phone'];?>">
+		                                                        <input type="text" class="input" name="billing_phone" id="billing_phone" placeholder="Telefon" value="<?= $_POST['billing_phone'];?>">
 		                                                    </div>
 		                                                    <div class="form__item form__item--half">
 		                                                        <input type="email" class="input" name="billing_email" id="billing_email" placeholder="Email" value="<?= $_POST['billing_email'];?>">
 		                                                    </div>
 		                                                    <div class="form__item form__item--half">
-		                                                        <input type="text" class="input" name="billing_city" id="billing_city" placeholder="City" value="<?= $_POST['billing_city'];?>">
+		                                                        <input type="text" class="input" name="billing_city" id="billing_city" placeholder="Stadt" value="<?= $_POST['billing_city'];?>">
 		                                                    </div>
 		                                                </div>
 		                                            </div>
@@ -105,15 +105,15 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 		                            </div>
 		                            <div class="steps-checkout__step" data-step="1">
 		                                    <div class="steps-checkout__head">
-		                                        <h4 class="steps-checkout__title" data-trigger-step><span>2.</span>delivery</h4>
+		                                        <h4 class="steps-checkout__title" data-trigger-step><span>2.</span>Lieferung</h4>
 		                                        <ul class="steps-checkout__result-list">
 		                                            <li>DPD EXPRESS: <strong>15,52€</strong></li>
 		                                            <li>Schillerstrasse 56</li>
-		                                            <li>City:  Egling</li>
-		                                            <li>State/province/area:   Freistaat Bayern</li>
+		                                            <li>Stadt:  Egling</li>
+		                                            <li>Staat/Provinz/Gebiet:   Freistaat Bayern</li>
 		                                        </ul>
 		                                        <button class="steps-checkout__change">
-		                                            Change
+		                                            Veränderung
 		                                        </button>
 		                                    </div>
 		                                    <div class="steps-checkout__collapse" data-collapse-step>
@@ -122,7 +122,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 														<table class="checkout-order__table order-table">
 
 															<tr>
-																<th><h4 class="steps-checkout__title-2">Order summary</h4></th>
+																<th><h4 class="steps-checkout__title-2">Bestellübersicht</h4></th>
 																<th>Menge:</th>
 																<th>Preis:</th>
 																<th>Summe:</th>
@@ -171,7 +171,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 															?>
 		                                                
 		                                                </table>
-		                                                <h4 class="checkout-order__title-mob steps-checkout__title-2">Order summary</h4>
+		                                                <h4 class="checkout-order__title-mob steps-checkout__title-2">Bestellübersicht</h4>
 		                                                <ul class="checkout-order__mob-list">
 		                                                	<?php do_action( 'woocommerce_review_order_before_cart_contents' );
 
@@ -232,7 +232,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 		                                            </div>
 		                                        </div>
 		                                        <div class="steps-checkout__row">
-		                                            <h4 class="steps-checkout__title-2">Delivery Method</h4>
+		                                            <h4 class="steps-checkout__title-2">Versandart</h4>
 		                                            <!-- <ul class="steps-checkout__list">
 		                                                <li>
 		                                                    <label class="checkbox-radio checkbox-radio--radio checkbox-radio--xs">
@@ -338,15 +338,15 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 		                            </div>
 		                            <div class="steps-checkout__step" data-step="2">
 		                                    <div class="steps-checkout__head">
-		                                        <h4 class="steps-checkout__title" data-trigger-step><span>3.</span>Payment Method</h4>
+		                                        <h4 class="steps-checkout__title" data-trigger-step><span>3.</span>Zahlungsmethode</h4>
 		                                        <ul class="steps-checkout__result-list">
 		                                            <li>DPD EXPRESS: <strong>15,52€</strong></li>
 		                                            <li>Schillerstrasse 56</li>
-		                                            <li>City:  Egling</li>
-		                                            <li>State/province/area:   Freistaat Bayern</li>
+		                                            <li>Stadt:  Egling</li>
+		                                            <li>Staat/Provinz/Gebiet:   Freistaat Bayern</li>
 		                                        </ul>
 		                                        <button class="steps-checkout__change">
-		                                            Change
+		                                            Veränderung
 		                                        </button>
 		                                    </div>
 		                                    <div class="steps-checkout__collapse" data-collapse-step>
@@ -391,21 +391,21 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 		                                                    <label class="checkbox-radio checkbox-radio--radio checkbox-radio--xs">
 		                                                        <input type="radio" name="payment-method">
 		                                                        <div class="checkbox-radio__square"></div>
-		                                                        <div class="checkbox-radio__text">Credit Card (Stripe)</div>
+		                                                        <div class="checkbox-radio__text">Kreditkarten (Stripe)</div>
 		                                                    </label>
 		                                                </li>
 		                                                <li>
 		                                                    <label class="checkbox-radio checkbox-radio--radio checkbox-radio--xs">
 		                                                        <input type="radio" name="payment-method" checked>
 		                                                        <div class="checkbox-radio__square"></div>
-		                                                        <div class="checkbox-radio__text">Credit Cards</div>
+		                                                        <div class="checkbox-radio__text">Kreditkarten</div>
 		                                                    </label>
 		                                                </li>
 		                                            </ul>
 		                                        </div>
 		                                        <div class="steps-checkout__row">
-		                                            <h4 class="steps-checkout__title-2">Payment</h4>
-		                                            <div class="steps-checkout__subtitle mb-5 ps-0">All transactions are secure and encrypted.</div>
+		                                            <h4 class="steps-checkout__title-2">Zahlung</h4>
+		                                            <div class="steps-checkout__subtitle mb-5 ps-0">Alle Transaktionen sind sicher und verschlüsselt.</div>
 
 		                                            <div class="payment-card">
 		                                                <div class="form">
@@ -429,14 +429,14 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 		                                            </div>
 		                                        </div>
 		                                        <div class="steps-checkout__row">
-		                                            <h4 class="steps-checkout__title-2">Billing address</h4>
+		                                            <h4 class="steps-checkout__title-2">Rechnungsadresse</h4>
 
 		                                            <div class="form">
 		                                                <div class="form__items form__items--align-top">
 		                                                    <div class="form__item">
 		                                                        <div class="select-wrap">
 		                                                            <select name="" class="_select">
-		                                                                <option value="" selected>Counrtry/Region</option>
+		                                                                <option value="" selected>Land/Region</option>
 		                                                                <option value="1">Lorem, ipsum dolor.</option>
 		                                                                <option value="2">Lorem, ipsum dolor.</option>
 		                                                            </select>
@@ -485,19 +485,19 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 						        	<div class="payment-cart" data-cart>
 						        		<div class="payment-cart__main-box">
 						        			<div class="payment-cart__mob-head">
-						        				<h5 class="payment-cart__mob-head-title" data-text="hide order summary">Show order summary</h5>
+						        				<h5 class="payment-cart__mob-head-title" data-text="hide order summary">Bestellübersicht anzeigen</h5>
 						        				<div class="payment-cart__mob-head-total-price subtot"><?= $sub. get_woocommerce_currency_symbol(); ?></div>
 						        			</div>
 						        			<div class="payment-cart__body">
-						        				<h4 class="payment-cart__title">Purchase summary</h4>
+						        				<h4 class="payment-cart__title">Einkaufszusammenfassung</h4>
 						        				<ul class="payment-cart__list">
 						        					<li>
-						        						<p>Subtotal:</p>
+						        						<p>Zwischensumme:</p>
 						        						<p><strong class="subtot"><?= $sub. get_woocommerce_currency_symbol(); ?></strong></p>
 						        					</li>
 						        					<li>
-						        						<p>Shipping </p>
-						        						<p><strong>Calculated at next step</strong></p>
+						        						<p>Versand </p>
+						        						<p><strong>Wird im nächsten Schritt berechnet</strong></p>
 						        					</li>
 						        				</ul>
 						        				<?php if ( wc_coupons_enabled() ) { ?>
@@ -506,7 +506,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 							        						<input type="checkbox">
 							        						<div class="payment-cart__coupon-checkbox-text">
 							        							<img src="<?= get_template_directory_uri();?>/img/icons/coupon-icon.svg" alt="">
-							        							<span>Do you Have a Coupon Code?</span>
+							        							<span>Haben Sie einen Gutscheincode?</span>
 							        						</div>
 							        					</label>
 							        					<div class="payment-cart__coupon-input">
@@ -520,7 +520,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 						        				<div class="payment-cart__total">
 						        					<div class="payment-cart__total-col-1">
 						        						<p>Bezahlen</p>
-						        						<p class="tax_tot">Including VAT <?= $taxes. get_woocommerce_currency_symbol();?></p>
+						        						<p class="tax_tot">Inklusive Mehrwertsteuer <?= $taxes. get_woocommerce_currency_symbol();?></p>
 						        					</div>
 						        					<div class="payment-cart__total-col-2 tot"><?= $total. get_woocommerce_currency_symbol(); ?></div>
 						        				</div>
@@ -537,7 +537,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 						                    </div>
 						                </div>
 						                <div class="payment-cart__bottom">
-						                	<p>We accept:</p>
+						                	<p>Wir akzeptieren:</p>
 						                    <ul class="payment-cart__accept-list">
 						                        <li>
 						                            <img src="<?= get_template_directory_uri();?>/img/icons/accept-icon-1.svg" alt="">
@@ -558,7 +558,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 						                </div>
 						            </div>
 						            <div class="shopping-cart__bottom-btn">
-						            	<a href="<?= get_permalink( wc_get_page_id( 'shop' ) );?>" class="btn-default btn-default--transparent not-hover">Continue Shopping</a>
+						            	<a href="<?= get_permalink( wc_get_page_id( 'shop' ) );?>" class="btn-default btn-default--transparent not-hover">Mit dem Einkaufen fortfahren</a>
 						            </div>
 						</div>
 

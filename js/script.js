@@ -179,7 +179,7 @@ $("#addreview_m").validate({
 
                $('.cart_count').html(data.data.cart_qty);
 
-               that.text('Added to cart');
+               that.text('Zum Warenkorb hinzugefügt');
 
                ajax_mini_cart_update();
 
@@ -212,7 +212,7 @@ $("#addreview_m").validate({
 
                $('.cart_count').html(data.data.cart_qty);
 
-               that.text('Added to cart');
+               that.text('Zum Warenkorb hinzugefügt');
 
                ajax_mini_cart_update();
 

@@ -95,14 +95,14 @@ if($_COOKIE['wish']){
         <div class="mobile-bottom-price">
             <div class="mobile-bottom-price__col-1">
                 <div class="mobile-bottom-price__label">
-                    Price
+                    Preis
                 </div>
                 <div class="mobile-bottom-price__price">
                     <?php woocommerce_template_single_price();?>
                 </div>
             </div>
             <div class="mobile-bottom-price__col-2">
-                <a href="#" data-product_id="<?= $product->get_id(); ?>" class="btn-default add-to-cart" <?php if( $product->is_type('variable') && $variation_id){ echo 'data-variation_id="'.$variation_id.'"';}?>>Buy now</a>
+                <a href="#" data-product_id="<?= $product->get_id(); ?>" class="btn-default add-to-cart" <?php if( $product->is_type('variable') && $variation_id){ echo 'data-variation_id="'.$variation_id.'"';}?>>Kaufe jetzt</a>
             </div>
         </div>
 
@@ -167,7 +167,7 @@ if($_COOKIE['wish']){
                                                                 <div class="btn__text-decor">
                                                                     <img class="img-svg" src="<?= get_template_directory_uri();?>/img/photo/play-text.svg" alt="">
                                                                 </div>
-                                                                <div class="btn__text">Play</div>
+                                                                <div class="btn__text">Spielen</div>
                                                             </div>
                                                         </div>
                                                     </a>
@@ -184,7 +184,7 @@ if($_COOKIE['wish']){
                             <div class="mob-accordion" data-spoller="mob">
                                 <?php if ( get_field('show_description') ):?>
                                     <div class="mob-accordion__item">
-                                        <h5 class="mob-accordion__title" data-spoller-trigger>Describe</h5>
+                                        <h5 class="mob-accordion__title" data-spoller-trigger>Beschreiben</h5>
                                         <div class="mob-accordion__collapse">
                                             <div class="product-detail-info__row">
                                                 <!-- <h3 class="product-detail-info__title">Kinderbett “Piratenschiff”</h3> -->
@@ -254,7 +254,7 @@ if($_COOKIE['wish']){
                                                                 <div class="btn__text-decor">
                                                                     <img class="img-svg" src="<?= get_template_directory_uri();?>/img/photo/play-text.svg" alt="">
                                                                 </div>
-                                                                <div class="btn__text">Play</div>
+                                                                <div class="btn__text">Spielen</div>
                                                             </div>
                                                         </div>
                                                     </a>
@@ -289,7 +289,7 @@ if($_COOKIE['wish']){
                                                                     <div class="btn__text-decor">
                                                                         <img class="img-svg" src="<?= get_template_directory_uri();?>/img/photo/play-text.svg" alt="">
                                                                     </div>
-                                                                    <div class="btn__text">Play</div>
+                                                                    <div class="btn__text">Spielen</div>
                                                                 </div>
                                                             </div>
                                                         </a>
@@ -324,15 +324,15 @@ if($_COOKIE['wish']){
                                     if ( get_field('show_reviews') ):?>
 
                                     <div class="mob-accordion__item">
-                                        <h5 class="mob-accordion__title" data-spoller-trigger><?php the_field('title_reviews');?></h5>
+                                        <h5 class="mob-accordion__title" data-spoller-trigger>Bewertungen<?php// the_field('title_reviews');?></h5>
                                         <div class="mob-accordion__collapse">
                                             <div class="product-detail-info__row">
                                                 <div class="reviews reviews--has-list">
                                                     <div class="reviews__head d-flex align-items-center justify-content-between">
-                                                        <h3 class="reviews__title"><?php the_field('title_reviews');?></h3>
+                                                        <h3 class="reviews__title">Bewertungen<?php //the_field('title_reviews');?></h3>
                                                         <div data-da=".reviews--has-list,991.98,last">
                                                             <a href="<?= get_permalink(149)?>#addreview" class="btn-with-arrow not-hover">
-                                                                Leave review
+                                                                Eine Rezension hinterlassen
                                                                 <span>
                                                                     <img class="img-svg" src="<?= get_template_directory_uri();?>/img/icons/arrow-right.svg" alt="">
                                                                 </span>

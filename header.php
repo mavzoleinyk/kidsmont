@@ -223,7 +223,7 @@ $name = $current_user->display_name;
 	                                    <div class="menu-mobile__actions-item-icon">
 	                                        <img src="<?= get_template_directory_uri();?>/img/icons/catalog.svg" alt="">
 	                                    </div>
-	                                    <div class="menu-mobile__actions-item-text">Catalog</div>
+	                                    <div class="menu-mobile__actions-item-text">Katalog</div>
 	                                    <div class="menu-mobile__actions-item-arrow"></div>
 	                                </div>
 	                            </li>
@@ -242,7 +242,7 @@ $name = $current_user->display_name;
 	                                    <div class="menu-mobile__actions-item-icon">
 	                                        <img src="<?= get_template_directory_uri();?>/img/icons/basket.svg" alt=""> 
 	                                    </div>
-	                                    <div class="menu-mobile__actions-item-text">Basket</div>
+	                                    <div class="menu-mobile__actions-item-text">Korb</div>
 	                                    <div class="menu-mobile__actions-item-count cart_count"><?= WC()->cart->get_cart_contents_count();?></div>
 	                                </div>
 	                            </li>
@@ -266,13 +266,13 @@ $name = $current_user->display_name;
 		                    ]);?>
 		                    <?php if(!is_user_logged_in()):?>
 		                        <div class="menu-mobile__bottom">
-		                            <a href="#registration" class="btn-default" data-popup="open-popup">Join Us</a>
-		                            <a href="#entry" class="btn-default btn-default--transparent" data-popup="open-popup">Sign in</a>
+		                            <a href="#registration" class="btn-default" data-popup="open-popup">Begleiten Sie uns</a>
+		                            <a href="#entry" class="btn-default btn-default--transparent" data-popup="open-popup">Einloggen</a>
 		                        </div>
 		                    <?php else:?>
 	                       
 		                        <div class="menu-mobile__bottom menu-mobile__bottom--sign-out">
-		                            <a href="<?= wp_logout_url(); ?>" class="btn-default btn-default--transparent">Sign out</a>
+		                            <a href="<?= wp_logout_url(); ?>" class="btn-default btn-default--transparent">Ausloggen</a>
 		                        </div>
 		                    <?php endif;?>
 	                    </div>

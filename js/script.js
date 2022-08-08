@@ -518,9 +518,9 @@ $("#addreview_m").validate({
             });
 
 
-    function filter(e){
+    function filter(){
 
-        e.preventDefault();
+        // e.preventDefault();
 
         var cont =  '.content';
 

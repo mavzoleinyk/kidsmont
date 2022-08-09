@@ -39,7 +39,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
                 		<div class="shopping-cart__col-1">
 
                 			<h2 class="checkout__title" data-da=".shopping-cart__col-2,991.98,first"><?php the_title();?></h2>
-
+<?php /* ?>
                 			<div class="checkout__head">
 		                        <h4 class="checkout__head-title">Express Kasse</h4>
 		                       <div class="checkout__head-buttons">
@@ -103,16 +103,103 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 		                        	<span>or</span>
 		                        </div>
 		                    </div>
-
+<?php */ ?>
 		                    <?php if ( $checkout->get_checkout_fields() ) :
 		                    	// do_action( 'woocommerce_checkout_before_customer_details' ); 
 
 		                    	?>
 
 		                    	<div class="checkout__steps steps-checkout">
-		                            <div class="steps-checkout__step steps-checkout__step--open" data-step="0">
+	                            
+	                            
+	                             <div class="steps-checkout__step steps-checkout__step--open" data-step="0">
+		                                <div class="steps-checkout__head">
+		                                    <h4 class="steps-checkout__title" data-trigger-step><span>1.</span>Zahlungsmethode</h4>
+		                                    <ul class="steps-checkout__result-list">
+		                                        <li>DPD EXPRESS: <strong>15,52€</strong></li>
+		                                        <li>Schillerstrasse 56</li>
+		                                        <li>Stadt:  Egling</li>
+		                                        <li>Staat/Provinz/Gebiet:   Freistaat Bayern</li>
+		                                    </ul>
+		                                    <button class="steps-checkout__change">
+		                                        Veränderung
+		                                    </button>
+		                                </div>
+		                                <div class="steps-checkout__collapse" data-collapse-step>
+		                                    <div class="steps-checkout__row">
+		                                        	<?php if ( WC()->cart->needs_payment() ) : ?>
+														<ul class="wc_payment_methods payment_methods methods steps-checkout__list">
+															<?php $WC_Payment_Gateways = new WC_Payment_Gateways();
+															$available_gateways = $WC_Payment_Gateways->get_available_payment_gateways();
+															if ( ! empty( $available_gateways ) ) {
+																foreach ( $available_gateways as $gateway ) {
+																	wc_get_template( 'checkout/payment-method.php', array( 'gateway' => $gateway ) );
+																}
+															} else {
+																echo '<li class="woocommerce-notice woocommerce-notice--info woocommerce-info">' . apply_filters( 'woocommerce_no_available_payment_methods_message', WC()->customer->get_billing_country() ? esc_html__( 'Entschuldigung, es scheint, dass für Ihr Bundesland keine Zahlungsmethoden verfügbar sind. Bitte kontaktieren Sie uns, wenn Sie Hilfe benötigen oder alternative Vorkehrungen treffen möchten.', 'woocommerce' ) : esc_html__( 'Bitte geben Sie oben Ihre Daten ein, um die verfügbaren Zahlungsmethoden anzuzeigen.', 'woocommerce' ) ) . '</li>';
+															}
+															?>
+														</ul>
+													<?php endif; ?>
+		                                    </div>
+		                                        
+		                                    <div class="steps-checkout__row">
+		                                        <h4 class="steps-checkout__title-2">Rechnungsadresse</h4>
+
+		                                        <div class="form">
+		                                            <div class="form__items form__items--align-top">
+		                                                    <div class="form__item">
+		                                                        <div class="select-wrap">
+		                                                        	<?php $countries_obj   = new WC_Countries();
+		                                                        	$countries   = $countries_obj->get_allowed_countries();
+		                                                        	$selected_country = WC()->customer->get_country( );
+		                                                        	?>
+		                                                            <select name="billing_country" class="_select">
+		                                                                <?php foreach ($countries as $key => $country) {?>
+		                                                                	<option <?php selected($selected_country, $key) ?> value="<?= $key ?>"><?= $country ?></option>
+		                                                                <?php } ?>
+		                                                            </select>
+		                                                        </div>
+		                                                    </div>
+		                                                    <div class="form__item form__item--half">
+
+		                                                        <input type="text" class="input" name="billing_first_name" placeholder="Ihr  Name" value="<?= WC()->checkout->get_value('billing_first_name');?>" autocomplete="given-name">
+		                                                    </div>
+		                                                    <div class="form__item form__item--half">
+		                                                        <input type="text" class="input" name="billing_last_name" id="billing_last_name" placeholder="Full  Nachname" value="<?= WC()->checkout->get_value('billing_last_name');?>" autocomplete="given-name">
+		                                                    </div>
+		                                                    <div class="form__item">
+		                                                      	<div class="select-wrap" id="bill-ajax">
+		                                                            <?php $stb = WC()->customer->get_billing_state();
+		                                                        	$country_codeb = WC()->customer->get_billing_country();
+		                                                        	$states_arrayb = WC()->countries->get_states( $country_codeb );
+		                                                        	if(!empty($states_arrayb)):?>
+			                                                            <select name="billing_state" class="_select">
+			                                                            	<?php foreach ($states_arrayb as $kodb => $stateb) {?>
+			                                                                	<option <?php selected($stb, $kodb) ?> value="<?= $kod ?>"><?= $stateb ?></option>
+			                                                                <?php } ?>
+			                                                            </select>
+			                                                        <?php endif;?>
+		                                                        </div>
+		                                                    </div>
+		                                                    <div class="form__item">
+		                                                        <input type="text" class="input" name="billing_address_1" id="billing_address_1" placeholder="Address" value="">
+		                                                    </div>
+		                                                    <div class="form__item form__item--half" data-mask="9{*}">
+		                                                        <input type="text" class="input input--sm" name="billing_postcode" id="billing_postcode" placeholder="Zipcode" value="<?= WC()->checkout->get_value('billing_postcode');?>">
+		                                                    </div>
+		                                            </div>
+		                                        </div>
+		                                    </div>
+		                                </div>
+		                            </div>
+	                            
+	                            
+	                            
+	                            
+		                            <div class="steps-checkout__step" data-step="1">
 		                            	<div class="steps-checkout__head">
-		                            		<h4 class="steps-checkout__title" data-trigger-step><span>1.</span>Kontaktinformationen</h4>
+		                            		<h4 class="steps-checkout__title" data-trigger-step><span>2.</span>Kontaktinformationen</h4>
 		                            		<?php if(!is_user_logged_in()):?>
 			                            		<div class="steps-checkout__subtitle"> Sie haben bereits ein Konto? <a href="#entry" data-popup="open-popup">Einloggen</a>
 			                            		</div>
@@ -155,9 +242,13 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 		                                </div>
 		                            </div>
 
-		                            <div class="steps-checkout__step" data-step="1">
+	                            
+	                            
+	                            
+	                            
+		                            <div class="steps-checkout__step" data-step="2">
 		                                <div class="steps-checkout__head">
-		                                    <h4 class="steps-checkout__title" data-trigger-step><span>2.</span>Lieferung</h4>
+		                                    <h4 class="steps-checkout__title" data-trigger-step><span>3.</span>Lieferung</h4>
 		                                    <ul class="steps-checkout__result-list">
 		                                            <li>DPD EXPRESS: <strong>15,52€</strong></li>
 		                                            <li>Schillerstrasse 56</li>
@@ -367,86 +458,11 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 		                                        </div>
 		                                    </div>
 		                            </div>
-		                            <div class="steps-checkout__step" data-step="2">
-		                                <div class="steps-checkout__head">
-		                                    <h4 class="steps-checkout__title" data-trigger-step><span>3.</span>Zahlungsmethode</h4>
-		                                    <ul class="steps-checkout__result-list">
-		                                        <li>DPD EXPRESS: <strong>15,52€</strong></li>
-		                                        <li>Schillerstrasse 56</li>
-		                                        <li>Stadt:  Egling</li>
-		                                        <li>Staat/Provinz/Gebiet:   Freistaat Bayern</li>
-		                                    </ul>
-		                                    <button class="steps-checkout__change">
-		                                        Veränderung
-		                                    </button>
-		                                </div>
-		                                <div class="steps-checkout__collapse" data-collapse-step>
-		                                    <div class="steps-checkout__row">
-		                                        	<?php if ( WC()->cart->needs_payment() ) : ?>
-														<ul class="wc_payment_methods payment_methods methods steps-checkout__list">
-															<?php $WC_Payment_Gateways = new WC_Payment_Gateways();
-															$available_gateways = $WC_Payment_Gateways->get_available_payment_gateways();
-															if ( ! empty( $available_gateways ) ) {
-																foreach ( $available_gateways as $gateway ) {
-																	wc_get_template( 'checkout/payment-method.php', array( 'gateway' => $gateway ) );
-																}
-															} else {
-																echo '<li class="woocommerce-notice woocommerce-notice--info woocommerce-info">' . apply_filters( 'woocommerce_no_available_payment_methods_message', WC()->customer->get_billing_country() ? esc_html__( 'Entschuldigung, es scheint, dass für Ihr Bundesland keine Zahlungsmethoden verfügbar sind. Bitte kontaktieren Sie uns, wenn Sie Hilfe benötigen oder alternative Vorkehrungen treffen möchten.', 'woocommerce' ) : esc_html__( 'Bitte geben Sie oben Ihre Daten ein, um die verfügbaren Zahlungsmethoden anzuzeigen.', 'woocommerce' ) ) . '</li>';
-															}
-															?>
-														</ul>
-													<?php endif; ?>
-		                                    </div>
-		                                        
-		                                    <div class="steps-checkout__row">
-		                                        <h4 class="steps-checkout__title-2">Rechnungsadresse</h4>
-
-		                                        <div class="form">
-		                                            <div class="form__items form__items--align-top">
-		                                                    <div class="form__item">
-		                                                        <div class="select-wrap">
-		                                                        	<?php $countries_obj   = new WC_Countries();
-		                                                        	$countries   = $countries_obj->get_allowed_countries();
-		                                                        	$selected_country = WC()->customer->get_country( );
-		                                                        	?>
-		                                                            <select name="billing_country" class="_select">
-		                                                                <?php foreach ($countries as $key => $country) {?>
-		                                                                	<option <?php selected($selected_country, $key) ?> value="<?= $key ?>"><?= $country ?></option>
-		                                                                <?php } ?>
-		                                                            </select>
-		                                                        </div>
-		                                                    </div>
-		                                                    <div class="form__item form__item--half">
-		                                                        <input type="text" class="input" name="billing_first_name" placeholder="Ihr  Name" value="<?= WC()->checkout->get_value('billing_first_name');?>" autocomplete="given-name">
-		                                                    </div>
-		                                                    <div class="form__item form__item--half">
-		                                                        <input type="text" class="input" name="billing_last_name" id="billing_last_name" placeholder="Full  Nachname" value="<?= WC()->checkout->get_value('billing_last_name');?>" autocomplete="given-name">
-		                                                    </div>
-		                                                    <div class="form__item">
-		                                                      	<div class="select-wrap" id="bill-ajax">
-		                                                            <?php $stb = WC()->customer->get_billing_state();
-		                                                        	$country_codeb = WC()->customer->get_billing_country();
-		                                                        	$states_arrayb = WC()->countries->get_states( $country_codeb );
-		                                                        	if(!empty($states_arrayb)):?>
-			                                                            <select name="billing_state" class="_select">
-			                                                            	<?php foreach ($states_arrayb as $kodb => $stateb) {?>
-			                                                                	<option <?php selected($stb, $kodb) ?> value="<?= $kod ?>"><?= $stateb ?></option>
-			                                                                <?php } ?>
-			                                                            </select>
-			                                                        <?php endif;?>
-		                                                        </div>
-		                                                    </div>
-		                                                    <div class="form__item">
-		                                                        <input type="text" class="input" name="billing_address_1" id="billing_address_1" placeholder="Address" value="">
-		                                                    </div>
-		                                                    <div class="form__item form__item--half" data-mask="9{*}">
-		                                                        <input type="text" class="input input--sm" name="billing_postcode" id="billing_postcode" placeholder="Zipcode" value="<?= WC()->checkout->get_value('billing_postcode');?>">
-		                                                    </div>
-		                                            </div>
-		                                        </div>
-		                                    </div>
-		                                </div>
-		                            </div>
+		                            
+		                            
+		                            
+		                            
+		                           
 		                        </div>
 		                        
 
@@ -480,7 +496,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 						                            <label class="checkbox-radio">
 						                                <input type="checkbox">
 						                                <div class="checkbox-radio__square"></div>
-						                                <div class="checkbox-radio__text">Mit der Registrierung stimmen Sie der <a href="#">Nutzungsvereinbarung zu</a></div>
+						                                <div class="checkbox-radio__text">Mit Ihrer Bestellung erklären Sie sich mit unseren <a href="https://dev1.kidsmont.de/agb/" target="_blank">Allgemeinen Geschäftsbedingungen</a>, <a href="https://dev1.kidsmont.de/widerrufsrecht/" target="_blank">Widerrufsbestimmungen</a> und <a href="https://dev1.kidsmont.de/datenschutzbelehrung/" target="_blank">Datenschutzbestimmungen</a> einverstanden.</div>
 						                            </label>
 						                        </div>
 						                    </div>

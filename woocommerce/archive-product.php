@@ -43,11 +43,11 @@ if (get_queried_object()->taxonomy){
 
 
 $order = [
-    'menu_order' => 'Gewöhnliche',
-    'popularity' => 'Beliebt',
-    'date' => 'Neuheiten',
-    'price-desc' => 'Von teuer bis günstig',
-    'price' => 'Von günstig bis teuer',
+    'menu_order' => 'Top-Produkte',
+    'popularity' => 'aufsteigend',
+    'date' => 'absteigend',
+    'price-desc' => 'neu eingetroffen',
+    //'price' => 'Von günstig bis teuer',
 ];
 
 

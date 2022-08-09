@@ -136,8 +136,6 @@ class Utils {
     }
 }
 
-
-;
 // HTML data-da="where(uniq class name),when(breakpoint),position(digi)"
 // e.x. data-da=".content__column-garden,992,2"
 // https://github.com/FreelancerLifeStyle/dynamic_adapt
@@ -272,7 +270,7 @@ class DynamicAdapt {
         }
     }
 }
-;
+
 
 class App {
     constructor() {
@@ -289,32 +287,32 @@ class App {
             document.body.classList.add('mobile-ios');
         }
 
+        document.body.classList.add('page-is-load');
+
         this.utils.numberCounterAnim();
         this.utils.initTruncateString();
         this.dynamicAdapt.init();
         this.headerHandler();
         this.popupHandler();
-        //this.initSmoothScroll();
+        this.initSmoothScroll();
         this.inputMaskInit();
         this.tabsInit();
         this.selectInit();
-        this.initMouse();
         this.spollerInit();
         this.componentsScriptsBeforeLoadPage();
         this.resetFormHandler();
         this.initDatepicker();
         this.initTooltip();
         this.initConstructorScripts();
-
+        this.scrollTriggerAnimation();
+        this.initScrollSticky();
+        this.setFontSize();
 
         window.addEventListener('load', () => {
-            document.body.classList.add('page-is-load');
+            
             this.componentsScriptsAfterLoadPage();
-            this.locomotiveScrollInit();
             this.setPaddingTopHeaderSize();
-            //this.videoHandlerInit();
             this.slidersInit();
-            this.setFontSize();
             this.setFullHeight();
         });
 
@@ -478,7 +476,6 @@ class App {
 
         function popupOpen(curentPopup) {
             if (curentPopup && unlock) {
-                window.locomotivePageScroll.stop();
                 const popupActive = document.querySelector('.popup.popup--open');
                 if (popupActive) {
                     popupClose(popupActive, false);
@@ -497,7 +494,6 @@ class App {
 
         function popupClose(popupActive, doUnlock = true) {
             if (unlock) {
-                window.locomotivePageScroll.start();
                 popupActive.classList.remove('popup--open');
                 if (doUnlock) {
                     bodyUnlock();
@@ -1014,52 +1010,6 @@ class App {
         };
     }
 
-    initMouse() {
-        if (!this.utils.isMobile()) {
-            // const createDot = () => {
-            // 	let dot = document.createElement('div');
-            // 	dot.className = 'mouse-dot';
-            // 	document.body.append(dot);
-            // 	return dot;
-            // }
-
-            // let mouseDot = createDot();
-
-            // const setPositon = (e) => {
-            // 	let width = mouseDot.clientWidth / 2;
-            // 	mouseDot.style.left = e.pageX + 'px';
-            // 	mouseDot.style.top = e.pageY + 'px';
-            // }
-
-            // const setHoverTrigger = (e) => {
-            // 	if (e.target.closest('.hover')) {
-            // 		mouseDot.classList.add('hover');
-            // 	} else {
-            // 		mouseDot.classList.remove('hover');
-            // 	}
-            // }
-
-            // const mouseHandler = (e) => {
-            // 	setPositon(e);
-            // 	setHoverTrigger(e);
-            // }
-
-
-
-            // document.documentElement.addEventListener('mousemove', mouseHandler);
-
-            window.mouseDot = {
-                show() {
-                    //mouseDot.classList.remove('hide');
-                },
-                hide() {
-                    //mouseDot.classList.add('hide');
-                }
-            }
-
-        }
-    }
-
     tabsInit() {
         let tabsContainers = document.querySelectorAll('[data-tabs]');
         if (tabsContainers.length) {
@@ -1104,14 +1054,6 @@ class App {
                                 i.classList.remove('tab-active');
                                 getContentItem(i.dataset.tabTrigger).classList.remove('tab-active');
                             })
-
-                            // update locomotive scroll
-                            let id = setInterval(() => {
-                                window.locomotivePageScroll.update();
-                            }, 20);
-                            setTimeout(() => {
-                                clearInterval(id);
-                            }, 200)
                         })
                     })
                 }
@@ -1156,14 +1098,6 @@ class App {
                                     getContentItem(i.dataset.tabTrigger).classList.remove('tab-active');
                                 })
 
-                                // update locomotive scroll
-                                let id = setInterval(() => {
-                                    window.locomotivePageScroll.update();
-                                }, 20);
-                                setTimeout(() => {
-                                    clearInterval(id);
-                                }, 200)
-
                                 window.sidePanel.close('faq-items');
                             })
                         })
@@ -1202,7 +1136,6 @@ class App {
                                     getContentItem(i.dataset.tabTrigger).classList.remove('tab-active');
                                 })
 
-                                console.log(tab);
                             }
 
                             if (questionEl) {
@@ -1230,9 +1163,9 @@ class App {
 
                                 if (document.documentElement.clientHeight - questionEl.clientHeight < questionEl.getBoundingClientRect().top) {
                                     setTimeout(() => {
-                                        window.locomotivePageScroll.scrollTo(questionEl, {
-                                            offset: -100,
-                                            duration: 0
+                                        window.scrollTo({
+                                            top: questionEl.getBoundingClientRect().top - 100,
+                                            behavior: 'smooth',
                                         })
                                     }, 200)
                                 }
@@ -1258,13 +1191,6 @@ class App {
                                 }
                             }
 
-                            // update locomotive scroll
-                            let id = setInterval(() => {
-                                window.locomotivePageScroll.update();
-                            }, 20);
-                            setTimeout(() => {
-                                clearInterval(id);
-                            }, 200)
                         }
                     })
                 }
@@ -1318,14 +1244,6 @@ class App {
                                     content && this.utils.slideUp(content);
                                 })
                             }
-
-                            // update locomotive scroll
-                            let id = setInterval(() => {
-                                window.locomotivePageScroll.update();
-                            }, 200);
-                            setTimeout(() => {
-                                clearInterval(id);
-                            }, 600)
 
                         })
                     })
@@ -1587,25 +1505,41 @@ class App {
     }
 
     initSmoothScroll() {
-        let anchors = document.querySelectorAll('[data-scroll]');
-        if (anchors.length) {
-            anchors.forEach(anchor => {
-                if (!anchor.getAttribute('href').match(/#\w+$/gi)) return;
+		let anchors = document.querySelectorAll('a[href*="#"]:not([data-popup="open-popup"])');
+		if (anchors.length) {
+			let header = document.querySelector('.header');
 
-                let id = anchor.getAttribute('href').match(/#\w+$/gi).join('').replace('#', '');
-                anchor.addEventListener('click', (e) => {
+			anchors.forEach(anchor => {
+				if (!anchor.getAttribute('href').match(/#\w+$/gi)) return;
 
-                    let el = document.getElementById(id);
-                    e.preventDefault();
-                    window.scrollTo({
-                        top: el ? el.offsetTop : 0,
-                        behavior: 'smooth',
-                    })
+				let id = anchor.getAttribute('href').match(/#\w+$/gi).join('').replace('#', '');
 
+				anchor.addEventListener('click', (e) => {
+					let el = document.querySelector(`#${id}`);
 
-                })
-            })
-        }
+					if (el) {
+						e.preventDefault();
+						let top = Math.abs(document.body.getBoundingClientRect().top) + el.getBoundingClientRect().top;
+
+						if (header) {
+							top = top - header.clientHeight;
+						}
+
+						window.scrollTo({
+							top: top,
+							behavior: 'smooth',
+						})
+					} else {
+						e.preventDefault();
+						window.scrollTo({
+							top: 0,
+							behavior: 'smooth',
+						})
+					}
+				})
+
+			})
+		}
     }
 
     selectInit() {
@@ -1866,67 +1800,6 @@ class App {
 
                 window.addEventListener('resize', setFontSize);
             })
-        }
-    }
-
-    locomotiveScrollInit() {
-        let container = document.querySelector('[data-scroll-container]');
-        if (container) {
-
-
-            const scroll = new LocomotiveScroll({
-                el: container,
-                smooth: true,
-                lerp: 0.03,
-                reloadOnContextChange: true,
-                scrollFromAnywhere: true,
-                repeat: true
-            });
-
-            if (window.location.href.match(/#\w+$/gi)) {
-                let el = document.querySelector(window.location.href.match(/#\w+$/gi)[0]);
-                if (el) {
-                    setTimeout(() => {
-                        scroll.scrollTo(el, {
-                            offset: -100,
-                            duration: 0
-                        })
-                    }, 200)
-
-                }
-            }
-
-            window.locomotivePageScroll = scroll;
-            window.locomotivePageScroll.updateScroll = () => {
-                let id = setInterval(() => {
-                    window.locomotivePageScroll.update();
-                }, 20);
-                setTimeout(() => {
-                    clearInterval(id);
-                }, 200)
-            }
-
-
-            let id = setInterval(() => {
-                scroll.update();
-            }, 200);
-            setTimeout(() => {
-                clearInterval(id);
-            }, 1000)
-
-            scroll.on('call', func => {
-                let id = setInterval(() => {
-                    window?.webGLCurtainElements[func]();
-                }, 200);
-                setTimeout(() => {
-                    clearInterval(id);
-                }, 3000)
-
-            });
-
-            scroll.on('scroll', (args) => {
-                //console.log(args.scroll.y);
-            });
         }
     }
 
@@ -2257,7 +2130,6 @@ class App {
                     if (document.documentElement.clientWidth > 991) {
                         mask.classList.add('_anime');
                         animationForward();
-                        mouseDot.hide();
                         if (animationBackId) {
                             cancelAnimationFrame(animationBackId);
                         }
@@ -2269,7 +2141,6 @@ class App {
                     if (document.documentElement.clientWidth > 991) {
                         mask.classList.remove('_anime');
                         animationBack();
-                        mouseDot.show();
 
                         if (animationForwardId) {
                             cancelAnimationFrame(animationForwardId);
@@ -2287,7 +2158,6 @@ class App {
                             e.preventDefault();
                             sidePanel.classList.remove('side-panel--open');
                             document.body.classList.remove('overflow-hidden');
-                            window.locomotivePageScroll.start();
 
                         }
                     })
@@ -2347,7 +2217,6 @@ class App {
                         e.preventDefault();
                         sidePanel.classList.remove('side-panel--open');
                         document.body.classList.remove('overflow-hidden');
-                        window.locomotivePageScroll.start();
                     })
                 })
 
@@ -2359,7 +2228,6 @@ class App {
                             e.preventDefault();
                             sidePanel.classList.add('side-panel--open');
                             document.body.classList.add('overflow-hidden');
-                            window.locomotivePageScroll.stop();
                         })
                     })
                 }
@@ -2371,7 +2239,6 @@ class App {
                     if (sidePanel) {
                         sidePanel.classList.add('side-panel--open');
                         document.body.classList.add('overflow-hidden');
-                        window.locomotivePageScroll.stop();
                     }
                 },
                 close(id) {
@@ -2379,7 +2246,6 @@ class App {
                     if (sidePanel) {
                         sidePanel.classList.remove('side-panel--open');
                         document.body.classList.remove('overflow-hidden');
-                        window.locomotivePageScroll.start();
                     }
                 }
             }
@@ -2651,13 +2517,6 @@ class App {
                                 icon.classList.toggle('active');
                                 this.utils.slideToggle(collapsedRow);
 
-                                // update locomotive scroll
-                                let id = setInterval(() => {
-                                    window.locomotivePageScroll.update();
-                                }, 200);
-                                setTimeout(() => {
-                                    clearInterval(id);
-                                }, 600)
                             })
                         }
                     })
@@ -2717,13 +2576,6 @@ class App {
                                         this.utils.slideUp(content);
                                     })
 
-                                    // update locomotive scroll
-                                    let id = setInterval(() => {
-                                        window.locomotivePageScroll.update();
-                                    }, 200);
-                                    setTimeout(() => {
-                                        clearInterval(id);
-                                    }, 600)
                                 }
                             })
                         }
@@ -2748,10 +2600,10 @@ class App {
                                 btn.classList.remove('text-is-show');
                                 btn.innerText = textOpen;
 
-                                window.locomotivePageScroll.scrollTo(textTable, {
-                                    offset: -50,
-                                    duration: 0
-                                })
+                                // window.locomotivePageScroll.scrollTo(textTable, {
+                                //     offset: -50,
+                                //     duration: 0
+                                // })
 
                             } else {
                                 btn.classList.add('text-is-show');
@@ -2760,12 +2612,6 @@ class App {
 
                             this.utils.slideToggle(collapseBox);
 
-                            let id = setInterval(() => {
-                                window.locomotivePageScroll.update();
-                            }, 200);
-                            setTimeout(() => {
-                                clearInterval(id);
-                            }, 600)
                         })
                     }
                 })
@@ -2811,13 +2657,6 @@ class App {
                             this.utils.slideUp(inputWrap, 300);
                         }
 
-                        // update locomotive scroll
-                        let id = setInterval(() => {
-                            window.locomotivePageScroll.update();
-                        }, 20);
-                        setTimeout(() => {
-                            clearInterval(id);
-                        }, 200)
                     })
                 }
 
@@ -2826,10 +2665,8 @@ class App {
                         mobHead.classList.toggle('active');
                         this.utils.slideToggle(cartBody, 300);
 
-                        // update locomotive scroll
                         let id = setInterval(() => {
                             if (setPostionF) setPostionF();
-                            window.locomotivePageScroll.update();
                         }, 20);
                         setTimeout(() => {
                             clearInterval(id);
@@ -3450,6 +3287,44 @@ class App {
                 }
             })
         };
+    }
+
+    scrollTriggerAnimation() {
+        function scrollTrigger(el, value, callback) {
+            let triggerPoint = document.documentElement.clientHeight / 100 * (100 - value);
+            const trigger = () => {
+                if (el.getBoundingClientRect().top <= triggerPoint && !el.classList.contains('is-show')) {
+                    if (typeof callback === 'function') {
+                        callback();
+                        el.classList.add('is-show')
+                    }
+                }
+            }
+
+            trigger();
+
+            window.addEventListener('scroll', trigger);
+        }
+
+        let elements = document.querySelectorAll('[data-scroll]');
+        if (elements.length) {
+            elements.forEach(item => {
+                window.addEventListener('load', () => {
+                    scrollTrigger(item, 15, () => {
+                        item.classList.add('is-inview');
+                    })
+                })
+            })
+        }
+    }
+
+    initScrollSticky() {
+        let stickyElements = document.querySelectorAll('[data-scroll-sticky]');
+        if (stickyElements.length) {
+            stickyElements.forEach(el => {
+                el.closest('._page').classList.add('overflow-visible');
+            })
+        }
     }
 
 }

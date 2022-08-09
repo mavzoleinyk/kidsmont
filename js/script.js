@@ -118,7 +118,7 @@ $("#addreview_m").validate({
       	
       	var val = $(this).val();
 
-        $('.search-result').css('opacity', 1);
+        $('.search-result').css({'opacity': 1, 'pointer-events': 'auto'});
 
         $('.search-result').html('Minimum 3 characters...')
 
@@ -145,7 +145,7 @@ $("#addreview_m").validate({
 
     	$('#tab'+tab).trigger( 'click' );
 
-        $('.search-result').css('opacity', 0);
+        $('.search-result').css({'opacity': 0, 'pointer-events': 'none'});
 
     	
     })
@@ -440,7 +440,7 @@ $("#addreview_m").validate({
         $('.wishlist').addClass('add-wish');
 	    $(this).removeClass('un-wish');
         $('.wishlist[data-wish="'+id+'"]').removeClass('un-wish');
-        $('.wishlist[data-wish="'+id+'"]').text('Auf Wunschzettel');
+        $('.wishlist[data-wish="'+id+'"]').text('Auf die Liste');
         $('.product-detail__gallery .product-card__like').removeClass('un-wish');
         $('.product-detail__gallery .product-card__like').addClass('add-wish');
         

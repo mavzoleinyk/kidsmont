@@ -35,8 +35,12 @@ get_header();
                 <h2 class="head__title"><?php the_title();?></h2>
             </div>
         </div>
-
-        <div class="contact padding-wrap pt-0">
+		<div class="contact padding-wrap pt-0">
+            <div class="container-sm">
+<?php //the_content('');?>
+				 </div>
+        </div>
+       <!-- --> <div class="contact padding-wrap pt-0">
             <div class="container-sm">
                 <div class="main-table">
                     <div class="main-table__tr">
@@ -94,7 +98,7 @@ get_header();
                     </div>
                 </div>
             </div>
-        </div>
+        </div><!-- -->
 
         <div class="contact padding-wrap d-none d-md-block">
             <div class="container-sm">

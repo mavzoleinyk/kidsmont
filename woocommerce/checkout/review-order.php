@@ -51,7 +51,7 @@ defined( 'ABSPATH' ) || exit;
             </div>
         </label>
         <div class="payment-cart__coupon-input">
-            <input type="text" name="coupon_code" class="input" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Your code', 'woocommerce' ); ?>" /><button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>">Gutschein anwenden</button>
+            <input type="text" name="coupon_code" class="input" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Gutscheincode', 'woocommerce' ); ?>" /><button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>">Gutschein anwenden</button>
             <?php do_action( 'woocommerce_cart_coupon' ); ?>
         </div>
     </div>
@@ -61,7 +61,7 @@ defined( 'ABSPATH' ) || exit;
 <div class="payment-cart__total">
     <div class="payment-cart__total-col-1">
         <p>Bezahlen</p>
-        <p class="tax_tot">Inklusive Mehrwertsteuer <?= wc_cart_totals_taxes_total_html() ?></p>
+        <p class="tax_tot">inkl. MwSt.  <?= wc_cart_totals_taxes_total_html() ?></p>
     </div>
     <div class="order-total payment-cart__total-col-2 tot"><?php wc_cart_totals_order_total_html(); ?></div>
 </div>

@@ -34,7 +34,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 		<div class="shopping-cart__col-1">
 			<div class="shopping-cart__products">
 				<div class="shopping-cart__products-head">
-					<h4>Befehl</h4>
+					<h4>Zwischensumme</h4>
 					<p class="cart_count2"><?= $cnum;?></p>
 				</div>
 				<ul class="shopping-cart__products-list selected-products__list">
@@ -131,7 +131,7 @@ do_action( 'woocommerce_before_cart' ); ?>
                 				<div class="payment-cart__mob-head-total-price subtot"><?= $sub. get_woocommerce_currency_symbol(); ?></div>
                 			</div>
                 			<div class="payment-cart__body">
-                				<h4 class="payment-cart__title">Einkaufszusammenfassung</h4>
+                				<h4 class="payment-cart__title">Gesamtsumme</h4>
                 				<ul class="payment-cart__list">
                 					<li>
                 						<p>Zwischensumme:</p>
@@ -148,11 +148,11 @@ do_action( 'woocommerce_before_cart' ); ?>
         	        						<input type="checkbox">
         	        						<div class="payment-cart__coupon-checkbox-text">
         	        							<img src="<?= get_template_directory_uri();?>/img/icons/coupon-icon.svg" alt="">
-        	        							<span>Haben Sie einen Gutscheincode?</span>
+        	        							<span>Gutscheinecode</span>
         	        						</div>
         	        					</label>
         	        					<div class="payment-cart__coupon-input">
-        	        						<input type="text" name="coupon_code" class="input not-label" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Your code', 'woocommerce' ); ?>" /><button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Gutschein anwenden', 'woocommerce' ); ?>"></button>
+        	        						<input type="text" name="coupon_code" class="input not-label" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Gutscheincode', 'woocommerce' ); ?>" /><button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Gutschein anwenden', 'woocommerce' ); ?>"></button>
         								<?php do_action( 'woocommerce_cart_coupon' ); ?>
         	        					</div>
         	        				</div>
@@ -162,7 +162,7 @@ do_action( 'woocommerce_before_cart' ); ?>
                 				<div class="payment-cart__total">
                 					<div class="payment-cart__total-col-1">
                 						<p>Bezahlen</p>
-                						<p class="tax_tot">Including VAT <?= $taxes. get_woocommerce_currency_symbol();?></p>
+                						<p class="tax_tot">inkl. MwSt. <?= $taxes. get_woocommerce_currency_symbol();?></p>
                 					</div>
                 					<div class="payment-cart__total-col-2 tot"><?= $total. get_woocommerce_currency_symbol(); ?></div>
                 				</div>

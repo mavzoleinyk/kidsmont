@@ -102,7 +102,7 @@ if($_COOKIE['wish']){
                 </div>
             </div>
             <div class="mobile-bottom-price__col-2">
-                <a href="#" data-product_id="<?= $product->get_id(); ?>" class="btn-default add-to-cart" <?php if( $product->is_type('variable') && $variation_id){ echo 'data-variation_id="'.$variation_id.'"';}?>>Kaufe jetzt</a>
+                <a href="#" data-product_id="<?= $product->get_id(); ?>" class="btn-default add-to-cart" <?php if( $product->is_type('variable') && $variation_id){ echo 'data-variation_id="'.$variation_id.'"';}?>>In den Warenkorb</a>
             </div>
         </div>
 
@@ -184,7 +184,7 @@ if($_COOKIE['wish']){
                             <div class="mob-accordion" data-spoller="mob">
                                 <?php if ( get_field('show_description') ):?>
                                     <div class="mob-accordion__item">
-                                        <h5 class="mob-accordion__title" data-spoller-trigger>Beschreiben</h5>
+                                        <h5 class="mob-accordion__title" data-spoller-trigger>Mehr zu diesem Produkt</h5>
                                         <div class="mob-accordion__collapse">
                                             <div class="product-detail-info__row">
                                                 <!-- <h3 class="product-detail-info__title">Kinderbett “Piratenschiff”</h3> -->
@@ -330,13 +330,13 @@ if($_COOKIE['wish']){
                                                 <div class="reviews reviews--has-list">
                                                     <div class="reviews__head d-flex align-items-center justify-content-between">
                                                         <h3 class="reviews__title">Bewertungen<?php //the_field('title_reviews');?></h3>
-                                                        <div data-da=".reviews--has-list,991.98,last">
-                                                            <a href="<?= get_permalink(149)?>#addreview" class="btn-with-arrow not-hover">
+                                                        <div>
+                                                            <span onClick="location='<?= get_permalink(149)?>#addreview'" class="btn-with-arrow not-hover" style="cursor: pointer">
                                                                 Eine Rezension hinterlassen
                                                                 <span>
                                                                     <img class="img-svg" src="<?= get_template_directory_uri();?>/img/icons/arrow-right.svg" alt="">
                                                                 </span>
-                                                            </a>
+                                                            </span>
                                                         </div>
                                                     </div>
                                                     <ul class="reviews__list">
@@ -637,11 +637,11 @@ if($_COOKIE['wish']){
                                     <a href="#" data-wish="<?= $product->get_id();?>" class="btn-default not-hover btn-default--transparent wishlist <?= in_array(get_the_ID(), $wish)?'un-wish':'add-wish';?>"><?= in_array(get_the_ID(), $wish)?'
 Zur Wunschliste hinzugefügt':'Zur Wunschliste hinzufügen';?></a>
                                 <?php else:?>
-                                    <a href="#" data-wish="<?= $product->get_id();?>" class="btn-default not-hover btn-default--transparent wishlist add-wish">Auf Wunschzettel</a>
+                                    <a href="#" data-wish="<?= $product->get_id();?>" class="btn-default not-hover btn-default--transparent wishlist add-wish">Auf die Liste</a>
                                 <?php endif;?>
 
                                 <a href="#" data-product_id="<?= $product->get_id(); ?>" class="btn-default not-hover add-to-cart" 
-                                    <?php if( $product->is_type('variable') && $variation_id){ echo 'data-variation_id="'.$variation_id.'"';}?>>Kaufe jetzt</a>   
+                                    <?php if( $product->is_type('variable') && $variation_id){ echo 'data-variation_id="'.$variation_id.'"';}?>>In den Warenkorb</a>   
                             </div>
                             <?php if(get_field('delivery_product_text', 'options')):?>
                                 <div class="product-detail-main-info__bottom text-content">

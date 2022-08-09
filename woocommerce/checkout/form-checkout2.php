@@ -520,7 +520,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 						        				<div class="payment-cart__total">
 						        					<div class="payment-cart__total-col-1">
 						        						<p>Bezahlen</p>
-						        						<p class="tax_tot">Inklusive Mehrwertsteuer <?= $taxes. get_woocommerce_currency_symbol();?></p>
+						        						<p class="tax_tot">inkl. MwSt. <?= $taxes. get_woocommerce_currency_symbol();?></p>
 						        					</div>
 						        					<div class="payment-cart__total-col-2 tot"><?= $total. get_woocommerce_currency_symbol(); ?></div>
 						        				</div>

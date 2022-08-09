@@ -126,7 +126,7 @@ if($cs==1){
 		                <div class="selected-products__bottom-row selected-products__bottom-row--1">
 		                    <div class="selected-products__bottom-text">
 		                        <div class="selected-products__bottom-label">Bezahlen</div>
-		                        <p class="tax_tot">Including VAT <?= $taxes. get_woocommerce_currency_symbol();?></p>
+		                        <p class="tax_tot">inkl. MwSt. <?= $taxes. get_woocommerce_currency_symbol();?></p>
 		                    </div>
 		                    <div class="selected-products__bottom-total tot">
 		                        <?= $total.get_woocommerce_currency_symbol(); ?>

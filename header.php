@@ -223,7 +223,7 @@ $name = $current_user->display_name;
 	                                    <div class="menu-mobile__actions-item-icon">
 	                                        <img src="<?= get_template_directory_uri();?>/img/icons/catalog.svg" alt="">
 	                                    </div>
-	                                    <div class="menu-mobile__actions-item-text">Katalog</div>
+	                                    <div class="menu-mobile__actions-item-text">Shop</div>
 	                                    <div class="menu-mobile__actions-item-arrow"></div>
 	                                </div>
 	                            </li>
@@ -242,7 +242,7 @@ $name = $current_user->display_name;
 	                                    <div class="menu-mobile__actions-item-icon">
 	                                        <img src="<?= get_template_directory_uri();?>/img/icons/basket.svg" alt=""> 
 	                                    </div>
-	                                    <div class="menu-mobile__actions-item-text">Korb</div>
+	                                    <div class="menu-mobile__actions-item-text">Warenkorb</div>
 	                                    <div class="menu-mobile__actions-item-count cart_count"><?= WC()->cart->get_cart_contents_count();?></div>
 	                                </div>
 	                            </li>

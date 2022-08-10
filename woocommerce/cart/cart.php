@@ -152,7 +152,7 @@ do_action( 'woocommerce_before_cart' ); ?>
         	        						</div>
         	        					</label>
         	        					<div class="payment-cart__coupon-input">
-        	        						<input type="text" name="coupon_code" class="input not-label" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Gutscheincode', 'woocommerce' ); ?>" /><button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Gutschein anwenden', 'woocommerce' ); ?>"></button>
+        	        						<input type="text" name="coupon_code" class="input not-label" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Gutscheincode', 'woocommerce' ); ?>" /><button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Gutschein anwenden', 'woocommerce' ); ?>">Gutschein anwenden</button>
         								<?php do_action( 'woocommerce_cart_coupon' ); ?>
         	        					</div>
         	        				</div>

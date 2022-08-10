@@ -151,11 +151,11 @@ $name = $cat[0]->name;
 
                     <div class="blog-detail__article-bottom">
                         <?php $prev = get_previous_post_link( '%link', '
-                            <img class="img-svg" src="'.get_template_directory_uri().'/img/icons/arrow-left.svg" alt=""><span>Previous post</span>', true ); 
+                            <img class="img-svg" src="'.get_template_directory_uri().'/img/icons/arrow-left.svg" alt=""><span>Vorheriger Beitrag</span>', true ); 
 
                         echo str_replace( '<a ', '<a class="blog-detail__article-bottom-link" ', $prev );?>
 
-                        <?php $next = get_next_post_link( '%link', '<span>Next post</span>
+                        <?php $next = get_next_post_link( '%link', '<span>Nächster Beitrag</span>
                             <img class="img-svg" src="'.get_template_directory_uri().'/img/icons/arrow-right.svg" alt="">', true ); 
 
                         echo str_replace( '<a ', '<a class="blog-detail__article-bottom-link" ', $next );?>

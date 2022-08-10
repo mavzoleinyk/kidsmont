@@ -168,20 +168,12 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 		                                                    <div class="form__item form__item--half">
 		                                                        <input type="text" class="input" name="billing_last_name" id="billing_last_name" placeholder="Full  Nachname" value="<?= WC()->checkout->get_value('billing_last_name');?>" autocomplete="given-name">
 		                                                    </div>
-		                                                    <div class="form__item">
-		                                                      	<div class="select-wrap" id="bill-ajax">
-		                                                            <?php $stb = WC()->customer->get_billing_state();
-		                                                        	$country_codeb = WC()->customer->get_billing_country();
-		                                                        	$states_arrayb = WC()->countries->get_states( $country_codeb );
-		                                                        	if(!empty($states_arrayb)):?>
-			                                                            <select name="billing_state" class="_select">
-			                                                            	<?php foreach ($states_arrayb as $kodb => $stateb) {?>
-			                                                                	<option <?php selected($stb, $kodb) ?> value="<?= $kod ?>"><?= $stateb ?></option>
-			                                                                <?php } ?>
-			                                                            </select>
-			                                                        <?php endif;?>
-		                                                        </div>
+		                                                    
+		                                                     <div class="form__item">
+		                                                        <input type="text" class="input" name="billing_state" id="billing_state" placeholder="Stadt" value="" autocomplete="given-name">
 		                                                    </div>
+		                                                    
+		                                                   
 		                                                    <div class="form__item">
 		                                                        <input type="text" class="input" name="billing_address_1" id="billing_address_1" placeholder="Address" value="">
 		                                                    </div>

@@ -252,7 +252,7 @@ $title2 = get_field('title_1');
                     <div class="leave-comment__body">
                         <div class="leave-comment__col-1">
                             <div class="drop-zone" data-drop-zone id="dZUpload">
-							    <input class="drop-zone__input" type="file" multiple="multiple" >
+							    <input class="drop-zone__input" type="file" multiple >
 							    <div class="drop-zone__fraction">
 							        0/10
 							    </div>
@@ -290,6 +290,5 @@ $title2 = get_field('title_1');
         </div>  
 
 	</main>
-
 
 <?php get_footer();?>

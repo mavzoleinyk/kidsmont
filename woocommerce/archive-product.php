@@ -487,11 +487,14 @@ woocommerce_output_all_notices();
             </div>
 
         <?php endif;?>
-
+<!--
         <div class="padding-wrap pb-0" data-last-section>
             <div class="text-tabel" data-text-table>
                 <div class="container-sm">
                     <div class="main-table">
+                       
+                       
+                       <?php /* ?>
                         <div class="text-tabel__preview">
                             <div class="main-table__tr">
                                 <div class="main-table__td">
@@ -509,7 +512,11 @@ woocommerce_output_all_notices();
                                 </div>
                             </div>
                         </div>
-                        <?php if($seo_tax):?>
+                        <?php */?>
+                        
+                        
+                        
+                        <?php /* if($seo_tax):?>
                             <div class="text-tabel__collapse">
                                 <?php foreach($seo_tax as $st):?>
                                     <div class="main-table__tr">
@@ -565,11 +572,11 @@ woocommerce_output_all_notices();
                                     </div>
                                 </div>
                             </div>
-                    <?php endif;?>
+                    <?php endif; */?>
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
     </main>
 
 <?php get_footer();

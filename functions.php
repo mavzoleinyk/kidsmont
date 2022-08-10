@@ -23,7 +23,7 @@ function add_scripts() {
 	wp_enqueue_script( 'app', get_template_directory_uri() . '/js/app.js', array(), false, true);
 
     wp_enqueue_script('jqueryvalidation',  'https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js', array(), false, 1);
-
+  wp_enqueue_script( 'messages_de', get_template_directory_uri() . '/js/messages_de.min.js', array(), false, true);
 	wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', array('jquery'), false, true);
 
 	wp_localize_script('script', 'globals',

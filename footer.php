@@ -439,7 +439,7 @@
                                     </div>
                                     <div class="form__item">
                                         <div class="drop-zone drop-zone--second" data-drop-zone>
-                                            <input class="drop-zone__input" type="file" multiple="multiple" >
+                                            <input class="drop-zone__input" type="file" multiple >
                                             <!-- accept=".jpg, .jpeg, .png, .pdf" -->
                                             <div class="drop-zone__fraction">
                                                 0/10
@@ -479,7 +479,12 @@
                 var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/60000|0);
                 var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);
         })(window,document,'https://cdn.bitrix24.de/b17084425/crm/site_button/loader_2_btl2yk.js');
+	
+	
+	
+	
 </script>
+
 <!-- TrustBox widget - Micro Review Count -->
 <div class="trustpilot-widget" data-locale="de-DE" data-template-id="5419b6a8b0d04a076446a9ad" data-businessunit-id="628c845d6cba59417276812a" data-style-height="24px" data-style-width="100%" data-theme="light" data-min-review-count="10">
 <a href="https://de.trustpilot.com/review/kidsmont.de" target="_blank" rel="noopener">Trustpilot</a>

@@ -623,4 +623,12 @@ function loadmore() {
  
 }
 
+function custom_my_fields($fields) {
+	
+	$fields["billing"]["billing_phone"]["required"] = false; // Телефон обязателен
 
+	return $fields;
+ 
+}
+
+add_filter("woocommerce_checkout_fields", "custom_my_fields");

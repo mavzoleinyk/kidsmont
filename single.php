@@ -76,9 +76,10 @@ $name = $cat[0]->name;
                     <div class="blog-detail__article-body">
                         <div class="blog-detail__article-side-social">
                             <ul class="a2a_kit blog-detail-social" data-scroll data-scroll-sticky data-scroll-target=".blog-detail__article-side-social">
-                                <li><a href="#" class="a2a_button_facebook">Facebook</a></li>
-                                <li><a href="#" class="a2a_button_twitter">Twitter</a></li>
-                                <li><a href="#" class="a2a_button_telegram">Telegram</a></li>
+                                <li><a href="https://www.facebook.com/kidsmont.berlin/" class="a2a_button_facebook">Facebook</a></li>
+                                <li><a href="https://www.instagram.com/kidsmont/" class="a2a_button_twitter">Instagram</a></li>
+                                <li><a href="https://www.tiktok.com/@kidsmont_de?is_from_webapp=1&sender_device=pc" class="a2a_button_telegram">TikTok</a></li>
+                                <li><a href="https://www.youtube.com/channel/UCaimlDnOQ2zPbaagOZgGvWA" class="a2a_button_telegram">Youtube</a></li>
                             </ul>
                         </div>
                         <div class="blog-detail__article-content">

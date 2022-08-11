@@ -167,17 +167,21 @@ do_action( 'woocommerce_before_cart' ); ?>
                 					<div class="payment-cart__total-col-2 tot"><?= $total. get_woocommerce_currency_symbol(); ?></div>
                 				</div>
                 				<div data-da=".payment-cart,991.98,first">
-                					<a href="<?= esc_url( wc_get_checkout_url() ); ?>" class="checkout-button wc-forward payment-cart__submit btn-default">Die Bestellung wird bestätigt</a>
+                				
+                				
+                				<input type="button" class="checkout-button wc-forward payment-cart__submit btn-default" onclick="location.href='<?= esc_url( wc_get_checkout_url() ); ?>';" value="Die Bestellung wird bestätigt" />
+                				
                 				</div>
                 				<div class="payment-cart__agreed">
                                     <label class="checkbox-radio">
-                                        <input type="checkbox">
+                                        <input type="checkbox" id="checkb">
                                         <div class="checkbox-radio__square"></div>
-                                        <div class="checkbox-radio__text">Mit der Registrierung stimmen Sie der <a href="#">Nutzungsvereinbarung zu</a></div>
+                                        <div class="checkbox-radio__text">Mit Ihrer Bestellung erklären Sie sich mit unseren <a href="https://dev1.kidsmont.de/agb/" target="_blank">Allgemeinen Geschäftsbedingungen</a>, <a href="https://dev1.kidsmont.de/widerrufsrecht/" target="_blank">Widerrufsbestimmungen</a> und <a href="https://dev1.kidsmont.de/datenschutzbelehrung/" target="_blank">Datenschutzbestimmungen</a> einverstanden.</div>
                                     </label>
                                 </div>
                             </div>
                         </div>
+                       
                         <div class="payment-cart__bottom">
                         	<p>Wir akzeptieren:</p>
                             <ul class="payment-cart__accept-list">

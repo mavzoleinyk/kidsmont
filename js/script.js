@@ -1,5 +1,36 @@
 jQuery(document).ready(function ($) {
 
+$('.checkout-button').prop("disabled", true);
+	
+$('#checkb').click(function() {
+ if ($(this).is(':checked')) {
+ $('.checkout-button').prop("disabled", false);
+ } else {
+ if ($('#checkb').filter(':checked').length < 1){
+ $('.checkout-button').attr('disabled',true);}
+ }
+});
+	
+	
+	
+	
+$('#place_order').prop("disabled", true);
+	
+$('#checkbs').click(function() {
+ if ($(this).is(':checked')) {
+ $('#place_order').prop("disabled", false);
+ } else {
+ if ($('#checkbs').filter(':checked').length < 1){
+ $('#place_order').attr('disabled',true);}
+ }
+});	
+	
+	
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+  // true for mobile device
+ $('#place_order').prop("disabled", false);
+}	
+	
     $('.instal').on('change', function(){
         var val = $(this).val();
         console.log(val);

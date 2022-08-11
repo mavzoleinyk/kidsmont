@@ -428,7 +428,7 @@ if($_COOKIE['wish']){
                                     <tr>
                                         <td>
                                             <div class="product-detail-main-info__table-label">
-                                                Color
+                                                Farbe
                                             </div>
                                         </td>
                                         <td>
@@ -524,7 +524,7 @@ if($_COOKIE['wish']){
                                     <tr>
                                         <td>
                                             <div class="product-detail-main-info__table-label">
-                                                Groesse
+                                                Größe
                                             </div>
                                         </td>
                                         <td>
@@ -555,7 +555,7 @@ if($_COOKIE['wish']){
                                     <tr>
                                         <td>
                                             <div class="product-detail-main-info__table-label">
-                                                Hoehe
+                                                Höhe
                                             </div>
                                         </td>
                                         <td>

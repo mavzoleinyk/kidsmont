@@ -369,7 +369,7 @@ function update_totals() {
             'subtotal' => $sub . get_woocommerce_currency_symbol(),
             'cart_qty' => $count,
             'cart_qty2' => $count2,
-            'tax_total' => 'Including VAT ' .$taxes .get_woocommerce_currency_symbol(),
+            'tax_total' => 'inkl. MwSt. ' .$taxes .get_woocommerce_currency_symbol(),
         ]
     );
 

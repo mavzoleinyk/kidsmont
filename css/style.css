@@ -16528,6 +16528,9 @@ h1.product-detail-main-info__title {
   .select__value {
     min-height: 53px;
   }
+  .product-carousel{
+    overflow: hidden;
+  }
 
   .product-carousel__slider {
     margin-bottom: 0;
@@ -16559,6 +16562,7 @@ h1.product-detail-main-info__title {
 
   .product-carousel-card__title {
     font-size: 14px;
+    height: 130px;
   }
 
   .product-carousel-card__price {
@@ -16582,10 +16586,15 @@ h1.product-detail-main-info__title {
 
   .see-more-ban {
     font-size: 6.7px;
+    overflow: hidden;
   }
 
   .see-more-ban .swiper-slide {
     font-size: 40px;
+  }
+
+  .reviews{
+    overflow:hidden;
   }
 
   .reviews__head {

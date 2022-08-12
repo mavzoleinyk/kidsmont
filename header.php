@@ -178,7 +178,7 @@ $name = $current_user->display_name;
 		            </nav>
 		        <?php endif;?>
 
-	            	<a href="tel:<?= phone_clear(get_field('phone', 'options'));?>" class="header__phone"><?php the_field('phone', 'options');?></a>
+	            	<a href="tel:+<?= phone_clear(get_field('phone', 'options'));?>" class="header__phone"><?php the_field('phone', 'options');?></a>
 	            <?php if(!is_page(33)):?>
 		            <div class="header__search">
 		                <a href="#" data-action="show-main-search">
@@ -197,9 +197,7 @@ $name = $current_user->display_name;
 		                        </a>
 		                    </div>
 		                    <div class="header-actions__item header-actions__item--like">
-		                    	<?php if($_COOKIE['wish']):?>
-			                    	<div class="header-actions__count"><?= $count;?></div>
-			                    <?php endif;?>
+		                    	<div class="header-actions__count <?= $_COOKIE['wish']?'':'hide';?>"><?= $count;?></div>
 		                        <a class="header-actions__link" href="#" data-side-panel-open="favorites">
 		                            <img class="img-svg" src="<?= get_template_directory_uri();?>/img/icons/like.svg" alt=""> 
 		                        </a>
@@ -242,7 +240,7 @@ $name = $current_user->display_name;
 		                </a>
 		            <?php endif;?>
 	            </div>
-	            <a href="tel:<?= phone_clear(get_field('phone', 'options'));?>" class="menu-mobile__phone"><?php the_field('phone', 'options');?></a>
+	            <a href="tel:+<?= phone_clear(get_field('phone', 'options'));?>" class="menu-mobile__phone"><?php the_field('phone', 'options');?></a>
 	            <div class="menu-mobile__back-btn" data-action="hide-next-list">
 	                back
 	            </div>

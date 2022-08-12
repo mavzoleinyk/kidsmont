@@ -60,9 +60,9 @@ $name = $cat[0]->name;
             <div class="blog-detail__body">
                 <div class="blog-detail__col-1">
                     <div class="blog-detail__article-head">
-                        <h2 class="blog-detail__article-head-title">
+                        <h1 class="blog-detail__article-head-title">
                             <?php the_title();?>
-                        </h2>
+                        </h1>
                         <div class="blog-detail__article-head-date">
                             <?php the_time('d.m.Y');?>
                         </div>

@@ -38,7 +38,7 @@ $title2 = get_field('title_1');
 
         <div class="container-sm">
             <div class="head pt-4 pt-lg-0">
-                <h2 class="head__title"><?php the_title();?></h2>
+                <h1 class="head__title"><?php the_title();?></h1>
             </div>
         </div>
 

@@ -488,7 +488,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 						                            <label class="checkbox-radio">
 						                                <input type="checkbox" id="checkbs">
 						                                <div class="checkbox-radio__square"></div>
-						                                <div class="checkbox-radio__text">Mit Ihrer Bestellung erklären Sie sich mit unseren <a href="https://dev1.kidsmont.de/agb/" target="_blank">Allgemeinen Geschäftsbedingungen</a>, <a href="https://dev1.kidsmont.de/widerrufsrecht/" target="_blank">Widerrufsbestimmungen</a> und <a href="https://dev1.kidsmont.de/datenschutzbelehrung/" target="_blank">Datenschutzbestimmungen</a> einverstanden.</div>
+						                                <div class="checkbox-radio__text">Mit Ihrer Bestellung erklären Sie sich mit unseren <a href="https://kidsmont.de/agb/" target="_blank">Allgemeinen Geschäftsbedingungen</a>, <a href="https://kidsmont.de/widerrufsrecht/" target="_blank">Widerrufsbestimmungen</a> und <a href="https://kidsmont.de/datenschutzbelehrung/" target="_blank">Datenschutzbestimmungen</a> einverstanden.</div>
 						                            </label>
 						                        </div>
 						                    </div>

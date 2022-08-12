@@ -337,15 +337,15 @@
                                         </div>
                                         <div class="form__item d-flex justify-content-between">
                                             <label class="checkbox-radio">
-                                                <input type="checkbox">
+                                                <input type="checkbox" id="checkb">
                                                 <div class="checkbox-radio__square"></div>
-                                                <div class="checkbox-radio__text">Mit der Registrierung stimmen Sie der <a href="#">Nutzungsvereinbarung zu</a></div>
+                                                <div class="checkbox-radio__text">Mit Ihrer Bestellung erklären Sie sich mit unseren <a href="https://kidsmont.de/agb/" target="_blank">Allgemeinen Geschäftsbedingungen</a>, <a href="https://kidsmont.de/widerrufsrecht/" target="_blank">Widerrufsbestimmungen</a> und <a href="https://kidsmont.de/datenschutzbelehrung/" target="_blank">Datenschutzbestimmungen</a> einverstanden.</div>
                                             </label>
                                         </div>
                                     </div>
-                                    <button class="form__submit w-100 btn-default">Registrieren</button>
+                                    <button class="checkout-button form__submit w-100 btn-default">Registrieren</button>
                                     <input type="hidden" name="action" value="registration_validation">
-                                    <div class="f-result"></div>
+                                    <div class="f-result" style="margin-top: 0"></div>
                                     <div class="form__bottom">
                                         <a href="#entry" data-popup="open-popup">Ich bin bereits registriert</a>
                                     </div>

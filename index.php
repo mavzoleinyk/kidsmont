@@ -51,7 +51,7 @@ $cats = get_terms('category', ['hide_empty'=>false, 'exclude' => 1]);
         
         <div class="container-sm">
             <div class="head head--top">
-                <h2 class="head__title"><?= is_home()? get_the_title($blog):get_queried_object()->name;?></h2>
+                <h1 class="head__title"><?= is_home()? get_the_title($blog):get_queried_object()->name;?></h1>
             </div>
         </div>
 

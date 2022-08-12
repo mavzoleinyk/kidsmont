@@ -28,7 +28,7 @@ if(is_cart()){
 
             <div class="container-sm">
                 <div class="head pt-4 pt-lg-0">
-                    <h2 class="head__title d-flex align-items-center justify-content-between">
+                    <h1 class="head__title d-flex align-items-center justify-content-between">
                         <?= get_the_title();?>
 
                         <div class="d-flex align-items-center justify-content-center justify-content-md-start"
@@ -38,7 +38,7 @@ if(is_cart()){
                                 <img class="img-svg" src="<?= get_template_directory_uri();?>/img/icons/go-out.svg" alt="">
                             </a>
                         </div>
-                    </h2>
+                    </h1>
                 </div>
             </div>
 
@@ -56,7 +56,7 @@ if(is_cart()){
 
             <div class="container-sm">
                 <div class="head pt-4 pt-lg-0">
-                    <h2 class="head__title"><?php the_title();?></h2>
+                    <h1 class="head__title"><?php the_title();?></h1>
                 </div>
             </div>
 

@@ -366,6 +366,14 @@ woocommerce_output_all_notices();
                                             </div>
                                         </div>
 
+                                        <div class="products-filter__bottom desc-filter desc-filter-hide">
+                                            <button type="reset" onclick="location.href='<?= $link;?>'" data-button-reset
+                                                class="products-filter__rest btn-default btn-default--transparent">Klar
+                                                (<span>4</span>)</button>
+                                            <button type="submit"
+                                                class="products-filter__submit btn-default">Sich bewerben</button>
+                                        </div>
+
                                     </div>
                                     <div class="side-panel__bottom">
                                         <div class="products-filter__bottom">
@@ -389,7 +397,7 @@ woocommerce_output_all_notices();
                             <div class="products__sort">
                                 <label for="sort">Sortieren:</label>
                                 <div class="select-wrap">
-                                    <select id="sort" name="sort" class="_select" data-select="price">
+                                    <select id="sort" name="sort" class="_select">
                                         <?php foreach ($order as $key => $value):?>
                                             <option value="<?= $key;?>"><?= $value;?></option>
                                     <?php endforeach;?>

@@ -640,12 +640,18 @@ Zur Wunschliste hinzugefügt':'Zur Wunschliste hinzufügen';?></a>
                                     <a href="#" data-wish="<?= $product->get_id();?>" class="btn-default not-hover btn-default--transparent wishlist add-wish">Auf die Liste</a>
                                 <?php endif;?>
 
-                                <a href="#" data-product_id="<?= $product->get_id(); ?>" class="btn-default not-hover add-to-cart" 
+                                <a href="#" data-product_id="<?= $product->get_id(); ?>" class="btn-default not-hover add-to-cart <?php $product->is_in_stock()?'':'disable-product';?>" 
                                     <?php if( $product->is_type('variable') && $variation_id){ echo 'data-variation_id="'.$variation_id.'"';}?>>In den Warenkorb</a>   
                             </div>
                             <?php if(get_field('delivery_product_text', 'options')):?>
                                 <div class="product-detail-main-info__bottom text-content">
                                     <?php the_field('delivery_product_text', 'options');?>
+                                </div>
+                            <?php endif;?>
+
+                            <?php if (!$product->is_in_stock()):?>
+                                <div class="product-detail-main-info__bottom text-content">
+                                    Nicht Verfügbar
                                 </div>
                             <?php endif;?>
                         </div>

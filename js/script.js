@@ -227,7 +227,10 @@ $("#addreview_m").validate({
                that.text('Zum Warenkorb hinzugefügt');
 
                ajax_mini_cart_update();
-
+//----------------------------
+				 $('.side-panel.side-panel--right.selected-products.basket').addClass('side-panel--open');
+              
+//----------------------------				
             }
         });
     })
@@ -274,12 +277,22 @@ $("#addreview_m").validate({
      *
      */
 
+    if($('.woocommerce-variation-add-to-cart.woocommerce-variation-add-to-cart-disabled')){
+        $('.add-to-cart').addClass('disable-product');
+    }
+
 
     $(document).on('show_variation', '.single_variation_wrap', function (event, variation) {
     console.log(variation);
         $('.add-to-cart').attr('data-variation_id', variation.variation_id);
 
         $('#main_img').attr('src', variation.image.url);
+
+        if(variation.is_in_stock == true){
+            $('.add-to-cart').removeClass('disable-product');
+        }else{
+            $('.add-to-cart').addClass('disable-product');
+        }
 
         if(variation.price_html){
         	$('.product-detail-main-info__price').html(variation.price_html);
@@ -366,7 +379,8 @@ $("#addreview_m").validate({
         var hoehe = $(this).closest('.product-detail-main-info__table').find('.option-hoehe.options-list__btn--active').attr('data-hoehe');
         var model = $(this).closest('.product-detail-main-info__table').find('.option-model.options-list__btn--active').attr('data-model');
         var size = $(this).closest('.product-detail-main-info__table').find('.option-size.options-list__btn--active').attr('data-size');
-
+		//var aval = $( ".out-of-stock" ).text();
+		
         var groesse = $(this).attr('data-groesse');
         $('#pa_farbe').val(color).change();
         $('#pa_groesse').val(groesse).change();
@@ -374,6 +388,7 @@ $("#addreview_m").validate({
         $('#pa_hoehe').val(hoehe).change();
         $('#pa_model').val(model).change();
         $('#pa_size').val(size).change();
+		//$('.product-detail-main-info__bottom').html(aval);
 
     });
 

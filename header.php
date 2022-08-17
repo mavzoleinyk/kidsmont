@@ -2,6 +2,8 @@
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo('charset');?>">
+	<meta name="yandex-verification" content="4affcf0316647f9f" />
+
 	<link rel="apple-touch-icon" sizes="180x180" href="<?php bloginfo('template_directory'); ?>/img/favicon/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="<?php bloginfo('template_directory'); ?>/img/favicon/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="<?php bloginfo('template_directory'); ?>/img/favicon/favicon-16x16.png">
@@ -329,7 +331,7 @@ $name = $current_user->display_name;
 	<div class="side-panel side-panel--right selected-products favorites" data-side-panel="favorites">	
 	    <div class="side-panel__body">
 	        <div class="side-panel__head">
-	            <h3 class="selected-products__title">Wunschzettel</h3>
+	            <div class="selected-products__title">Wunschzettel</div>
 	            <?php if($count>0):?>
 	            	<div class="selected-products__count"><?= $count==1?$count.' produkt':$count.' produkte';?></div>
 	            <?php endif;?>
@@ -443,11 +445,12 @@ $name = $current_user->display_name;
 	</div>
 
 	<?php $order = [
-		'menu_order' => 'Standaard',
-		'popularity' => 'Populariteit',
-		'date' => 'Nieuwste',
-		'price-desc' => 'Aflopende prijs',
-		'price' => 'Prijsverhoging',
+		//'menu_order' => 'Standaard',
+		'popularity' => 'Top-Produkte',
+		
+		'price' => 'Preis: aufsteigend',
+		'price-desc' => 'Preis: absteigend',
+	    'date' => 'Neu eingetroffen',
 	];?>
 	    <div class="side-panel products-sort" data-side-panel="products-sort">
 		    <div class="side-panel__close" data-side-panel-close><span></span></div>

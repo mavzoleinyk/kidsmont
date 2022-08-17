@@ -184,12 +184,12 @@ if($_COOKIE['wish']){
                             <div class="mob-accordion" data-spoller="mob">
                                 <?php if ( get_field('show_description') ):?>
                                     <div class="mob-accordion__item">
-                                        <h5 class="mob-accordion__title" data-spoller-trigger>Mehr zu diesem Produkt</h5>
+                                        <span class="mob-accordion__title" data-spoller-trigger>Mehr zu diesem Produkt</span>
                                         <div class="mob-accordion__collapse">
                                             <div class="product-detail-info__row">
-                                                <!-- <h3 class="product-detail-info__title">Kinderbett “Piratenschiff”</h3> -->
+                                               
                                                 <div class="product-detail-info__text text-content">
-                                                    <h3><?php the_title();?></h3>
+                                                    <div class="sh3"><?php the_title();?></div>
                                                     <?= $product->description;?>
                                                 </div>
                                             </div>
@@ -202,10 +202,10 @@ if($_COOKIE['wish']){
                                     if ( get_field('show_faq') ):?>
 
                                         <div class="mob-accordion__item">
-                                            <h5 class="mob-accordion__title" data-spoller-trigger><?php the_field('title_faq');?></h5>
+                                            <span class="mob-accordion__title" data-spoller-trigger><?php the_field('title_faq');?></span>
                                             <div class="mob-accordion__collapse">
                                                 <div class="product-detail-info__row">
-                                                    <h3 class="product-detail-info__title"><?php the_field('title_faq');?></h3>
+                                                    <span class="product-detail-info__title"><?php the_field('title_faq');?></span>
                                                     <ul class="accordion" data-spoller data-sub-spoller>
                                                         <?php foreach( $faq as $post): setup_postdata($post); ?>
                                                             <li>
@@ -237,10 +237,10 @@ if($_COOKIE['wish']){
                                     if ( get_field('show_instruction') ):?>
 
                                     <div class="mob-accordion__item">
-                                        <h5 class="mob-accordion__title" data-spoller-trigger><?php the_field('title_instruction');?></h5>
+                                        <span class="mob-accordion__title" data-spoller-trigger><?php the_field('title_instruction');?></span>
                                         <div class="mob-accordion__collapse">
                                             <div class="product-detail-info__row">
-                                                <h3 class="product-detail-info__title"><?php the_field('title_instruction');?></h3>
+                                                <span class="product-detail-info__title"><?php the_field('title_instruction');?></span>
 
                                                  <div class="video-wrap">
                                                     <a href="<?= $instruction['url'];?>" data-fancybox class="video not-hover">
@@ -270,11 +270,11 @@ if($_COOKIE['wish']){
                                 if ( get_field('show_choose') ):?>
 
                                     <div class="mob-accordion__item">
-                                        <h5 class="mob-accordion__title" data-spoller-trigger><?php the_field('title_choose_up');?></h5>
+                                        <span class="mob-accordion__title" data-spoller-trigger><?php the_field('title_choose_up');?></span>
                                         <div class="mob-accordion__collapse">
                                             <div class="product-detail-info__row">
                                                 <?php if(get_field('title_choose_up')):?>
-                                                    <h3 class="product-detail-info__title"><?php the_field('title_choose_up');?></h3>
+                                                    <span class="product-detail-info__title"><?php the_field('title_choose_up');?></span>
                                                 <?php endif;?>
                                                 <?php if($vpc):?>
                                                     <div class="video-wrap">
@@ -322,14 +322,14 @@ if($_COOKIE['wish']){
 
                                 if($reviews):
                                     if ( get_field('show_reviews') ):?>
-
+<?php// the_field('title_reviews');?>
                                     <div class="mob-accordion__item">
-                                        <h5 class="mob-accordion__title" data-spoller-trigger>Bewertungen<?php// the_field('title_reviews');?></h5>
+                                        <span class="mob-accordion__title" data-spoller-trigger>Bewertungen</span>
                                         <div class="mob-accordion__collapse">
                                             <div class="product-detail-info__row">
                                                 <div class="reviews reviews--has-list">
                                                     <div class="reviews__head d-flex align-items-center justify-content-between">
-                                                        <h3 class="reviews__title">Bewertungen<?php //the_field('title_reviews');?></h3>
+                                                        <span class="reviews__title">Bewertungen<?php //the_field('title_reviews');?></span>
                                                         <div>
                                                             <span onClick="location='<?= get_permalink(149)?>#addreview'" class="btn-with-arrow not-hover" style="cursor: pointer">
                                                                 Eine Rezension hinterlassen
@@ -378,7 +378,7 @@ if($_COOKIE['wish']){
                                     <div class="carousel carousel--fixed-width carousel-preview-products"
                                         data-carousel="fixed-width">
                                         <div class="carousel__head head d-flex align-items-center justify-content-between">
-                                            <h3 class="head__title mb-0">Kaufen Sie zusammen</h3>
+                                            <span class="head__title mb-0">Kaufen Sie zusammen</span>
                                             <div class="slider-buttons">
                                                 <div class="slider-button slider-button--prev hover" data-action="btn-prev">
                                                     <img class="img-svg" src="<?= get_template_directory_uri();?>/img/icons/arrow-left.svg" alt="">
@@ -619,7 +619,7 @@ if($_COOKIE['wish']){
                                 <tr class="product-detail-main-info__table-row-price">
                                     <td>
                                         <div class="product-detail-main-info__table-label">
-                                            Preis
+                                            Preis <!--<?php echo $product->stock_status;?>-->
                                         </div>
                                     </td>
                                     <td>
@@ -640,7 +640,7 @@ Zur Wunschliste hinzugefügt':'Zur Wunschliste hinzufügen';?></a>
                                     <a href="#" data-wish="<?= $product->get_id();?>" class="btn-default not-hover btn-default--transparent wishlist add-wish">Auf die Liste</a>
                                 <?php endif;?>
 
-                                <a href="#" data-product_id="<?= $product->get_id(); ?>" class="btn-default not-hover add-to-cart <?php $product->is_in_stock()?'':'disable-product';?>" 
+                                <a href="#" data-product_id="<?= $product->get_id(); ?>" class="btn-default not-hover add-to-cart <?= $product->is_in_stock()?'':'disable-product';?>" 
                                     <?php if( $product->is_type('variable') && $variation_id){ echo 'data-variation_id="'.$variation_id.'"';}?>>In den Warenkorb</a>   
                             </div>
                             <?php if(get_field('delivery_product_text', 'options')):?>

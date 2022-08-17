@@ -31,7 +31,7 @@ if($cs==1){
 
 	<div class="side-panel__body">
 		<div class="side-panel__head">
-		    <h3 class="selected-products__title">Gesamt</h3>
+		    <div class="selected-products__title">Gesamt</div>
 		    <?php if ( ! WC()->cart->is_empty() ) : ?>
 			    <div class="selected-products__count cart_count2"><?=$cnum;?></div>
 			<?php endif;?>

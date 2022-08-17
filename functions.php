@@ -632,3 +632,23 @@ function custom_my_fields($fields) {
 }
 
 add_filter("woocommerce_checkout_fields", "custom_my_fields");
+
+
+
+function yoast_remove_canonical_search( $canonical ) {
+	if ( is_page( 31 ) ) {
+		return "https://kidsmont.de/shop/";
+	}  
+}
+
+//add_filter( 'wpseo_canonical', 'yoast_remove_canonical_search' );
+
+function prefix_filter_canonical_example( $canonical ) {
+  if ( is_shop() ) {
+    $canonical = get_permalink( wc_get_page_id( 'shop' ) );
+  }
+
+  return $canonical;
+}
+
+add_filter( 'wpseo_canonical', 'prefix_filter_canonical_example' );

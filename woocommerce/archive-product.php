@@ -41,14 +41,21 @@ if (get_queried_object()->taxonomy){
     $link = get_permalink(get_option( 'woocommerce_shop_page_id' ));
 }
 
-
 $order = [
+		//'menu_order' => 'Standaard',
+		'popularity' => 'Top-Produkte',
+		
+		'price' => 'Preis: aufsteigend',
+		'price-desc' => 'Preis: absteigend',
+	    'date' => 'Neu eingetroffen',
+	];
+/* $order = [
     'menu_order' => 'Top-Produkte',
     'popularity' => 'aufsteigend',
     'date' => 'absteigend',
     'price-desc' => 'neu eingetroffen',
     //'price' => 'Von günstig bis teuer',
-];
+]; */
 
 
 $args['post_type'] = 'product';
@@ -366,7 +373,7 @@ woocommerce_output_all_notices();
                                             </div>
                                         </div>
 
-                                        <div class="products-filter__bottom desc-filter desc-filter-hide">
+                                        <div class="products-filter__bottom desc-filter desc-filter-hide" style="display: none">
                                             <button type="reset" onclick="location.href='<?= $link;?>'" data-button-reset
                                                 class="products-filter__rest btn-default btn-default--transparent">Klar
                                                 (<span>4</span>)</button>
@@ -376,7 +383,7 @@ woocommerce_output_all_notices();
 
                                     </div>
                                     <div class="side-panel__bottom">
-                                        <div class="products-filter__bottom">
+                                        <div class="products-filter__bottom" style="display: none">
                                             <button type="reset" onclick="location.href='<?= $link;?>'" data-button-reset
                                                 class="products-filter__rest btn-default btn-default--transparent">Klar
                                                 (<span>4</span>)</button>
@@ -407,11 +414,11 @@ woocommerce_output_all_notices();
                             <div class="products__mobile">
                                 <button class="products__mobile-btn" data-side-panel-open="products-filter">
                                     <img src="<?= get_template_directory_uri();?>/img/icons/filter.svg" alt="">
-                                    Filter
+                                    Filtern
                                 </button>
                                 <button class="products__mobile-btn" data-side-panel-open="products-sort">
                                     <img src="<?= get_template_directory_uri();?>/img/icons/sort.svg" alt="">
-                                    Sortieren nach
+                                    Sortieren
                                 </button>
                             </div>
 

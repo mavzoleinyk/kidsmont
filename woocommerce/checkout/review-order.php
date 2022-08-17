@@ -50,10 +50,10 @@ defined( 'ABSPATH' ) || exit;
                 <span>Haben Sie einen Gutscheincode?</span>
             </div>
         </label>
-        <div class="payment-cart__coupon-input">
-            <input type="text" name="coupon_code" class="input" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Gutscheincode', 'woocommerce' ); ?>" /><button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>">Gutschein anwenden</button>
+        <form class="woocommerce-form-coupon payment-cart__coupon-input" method="post">
+                <input type="text" name="coupon_code" class="input" id="coupon_code" value="" placeholder="<?php esc_attr_e( 'Gutscheincode', 'woocommerce' ); ?>" /><button type="submit" class="button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>">Gutschein anwenden</button>
             <?php do_action( 'woocommerce_cart_coupon' ); ?>
-        </div>
+        </form>
     </div>
 
 <?php } ?>
